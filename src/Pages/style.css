@@ -1,0 +1,53 @@
+.Header_Container{
+    height: 100vh auto;
+    width: 100%;
+    background-image: url("../assets/studio.png");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 15rem;
+    color: white;
+
+}
+
+.Header_heading{
+    font-size: 5rem;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    z-index: 999;margin-bottom: -2rem;
+    text-align: center;
+    text-shadow: black 3px 1px 1px ;
+   
+}
+.Heading_Text{
+    text-align: center;
+    text-shadow: black 3px 1px 1px ;
+    width: 50%;
+   
+}
+.Heading_Button {
+    background-color: darkorange;
+    border: none;
+    padding: .5rem 3rem .5rem 3rem ;
+    border-radius:2rem;
+    text-align: center;
+    font-weight: 600; 
+
+}
+.Content_Heading{
+font-size: 3rem;
+margin: 1rem;
+text-shadow: 5px 5px 5px black;
+color: darkorange;
+font-weight: 550;
+}
+
+
+div::-webkit-scrollbar {
+    width: 0px; /* remove scrollbar space /
+    background: transparent; / optional: just make scrollbar invisible /
+    }
+    / optional: show position indicator in red */
+    scroll-behavior: smooth;
+}
