@@ -42,7 +42,6 @@ text-shadow: 5px 5px 5px black;
 font-weight: 550;
 }
 
-
 div::-webkit-scrollbar {
     width: 0px; /* remove scrollbar space /
     background: transparent; / optional: just make scrollbar invisible /
@@ -50,3 +49,7 @@ div::-webkit-scrollbar {
     / optional: show position indicator in red */
     scroll-behavior: smooth;
 }
+
+
+
+

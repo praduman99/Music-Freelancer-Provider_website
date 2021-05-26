@@ -151,7 +151,7 @@ const Homepage = () => {
                         {choose1.map((item, index) => {
                             return (
                                 <Card
-                                hoverable
+                                    hoverable
                                     key={index}
                                     style={{ width: 300, margin: "5px" }}
                                     cover={
@@ -188,7 +188,7 @@ const Homepage = () => {
                         {choose1.map((item, index) => {
                             return (
                                 <Card
-                                hoverable
+                                    hoverable
                                     key={index}
                                     style={{ width: 300 }}
                                     cover={
@@ -215,9 +215,7 @@ const Homepage = () => {
                     </div>
 
                 </Row>
-                <Row>
-                    hello sir 
-                </Row>
+                
 
             </Layout>
         </div>
