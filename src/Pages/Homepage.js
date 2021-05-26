@@ -158,7 +158,7 @@ const Homepage = () => {
                                         <img
                                             alt="example"
                                             src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                                            style={{ width: 300, margin: "5px" }}
+                                            style={{ width: 300 }}
                                         />
                                     }
                                     actions={[
@@ -190,11 +190,11 @@ const Homepage = () => {
                                 <Card
                                 hoverable
                                     key={index}
-                                    style={{ width: 300, margin: "5px" }}
+                                    style={{ width: 300 }}
                                     cover={
                                         <img
                                             alt="example"
-                                            src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.pn"
+                                            src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
                                             style={{ width: 300, margin: "5px" }}
                                         />
                                     }
