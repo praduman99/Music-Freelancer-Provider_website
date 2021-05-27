@@ -138,10 +138,6 @@ const Authentication_page = () => {
                         </Form.Item>
                     </Form>
                     :
-
-
-
-
                     <div>
                         <Form
 
@@ -332,19 +328,6 @@ Or <span className="text" onClick={() => { setFormtype(!formtype) }}>Login here!
                             </Form.Item>
                         </Form>
                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
                 }
             </Col>
         </Row>
