@@ -13,19 +13,19 @@ const Footertext = {
     color: "black",
     textAlign: "center",
     fontWeight: "Bold",
-    marginTop:"2rem"
+    marginTop: "2rem"
 
 }
 
 const Footer = () => {
     return (
         <div>
-            <hr/>
+            <hr />
             <Layout>
                 <Row justify="center">
                     <h1>Freelancer Store</h1>
                 </Row>
-               
+
                 <Row justify="center">
                     <Col span={6} style={Footertext}>
                         Community
@@ -54,7 +54,7 @@ const Footer = () => {
                             <span style={{ padding: "5px" }}>Careers</span>
                             <span style={{ padding: "5px" }}>Partnerships</span>
                             <span style={{ padding: "5px" }}>Privacy policy</span>
-                            
+
                             <span style={{ padding: "5px" }}>Terms & Services</span>
 
 
@@ -80,7 +80,7 @@ const Footer = () => {
 
                 </Row>
             </Layout>
-            <Row style={{backgroundColor:"black",height:"3rem"}}></Row>
+            <Row style={{ backgroundColor: "black", height: "3rem" }}></Row>
         </div>
     )
 }
