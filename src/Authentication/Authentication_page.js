@@ -69,12 +69,13 @@ const tailFormItemLayout = {
         sm: {
             span: 16,
             offset: 8,
+            edse:3
         },
     },
 };
 
 const Authentication_page = () => {
-    const [formtype, setFormtype] = useState(false)
+    const [formtype, setFormtype] =   useState(false)
     const [form] = Form.useForm();
 
     const [autoCompleteResult, setAutoCompleteResult] = useState([])
