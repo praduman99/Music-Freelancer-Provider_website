@@ -15,11 +15,10 @@ import Authentication_page from '../Authentication/Authentication_page';
 
 const NavbarRouterdom = () => {
     return (
-        
         <Router>
             <Navbar/>
             <Switch >
-                <Route  path="/"  component={Homepage}></Route>
+                <Route strict  path="/"  component={Homepage}></Route>
                 <Route path="/Authentication" component={Authentication_page}></Route>
             </Switch>
             <Footer />
