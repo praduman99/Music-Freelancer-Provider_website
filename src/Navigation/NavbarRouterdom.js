@@ -15,7 +15,7 @@ import Authentication_page from '../Authentication/Authentication_page';
 
 const NavbarRouterdom = () => {
     return (
-        <Router>
+       <>
             <Navbar />
             <Homepage/>
             {/* <Switch >
@@ -26,7 +26,7 @@ const NavbarRouterdom = () => {
                 <Route exact path="/home" component={Homepage}></Route>
             </Switch> */}
             <Footer />
-        </Router>
+       </>
     );
 }
 

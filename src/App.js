@@ -1,11 +1,17 @@
 import './App.css';
 import 'antd/dist/antd.css';
-import NavbarRouterdom from './Navigation/NavbarRouterdom';
+
+import Footer from './Pages/Footer'
+import Homepage from './Pages/Homepage';
+import Navbar from './Navigation/Navbar'
 
 const App = () => {
   return (
     <div>
-      <NavbarRouterdom/>
+
+      <Navbar />
+      <Homepage />
+      <Footer />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import { Col, Drawer, Image, Row } from 'antd';
 import React, { useState, useEffect } from 'react'
 import { MenuOutlined, HomeFilled } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
+import { div } from 'react-router-dom';
 import Authentication_page from '../Authentication/Authentication_page';
 
 
@@ -57,19 +57,19 @@ const [drawer_Authentication, setDrawer_Authentication] = useState(false)
                     <Col span={20}>
                         <Row>
                             <Col span={3} >
-                                <Link style={navitems} to="/">Home</Link>
+                                <div style={navitems} >Home</div>
                             </Col>
                             <Col span={3} >
-                                <Link style={navitems} >Explore</Link>
+                                <div style={navitems} >Explore</div>
                             </Col>
                             <Col span={3} >
-                                <Link style={navitems} >Categories</Link>
+                                <div style={navitems} >Categories</div>
                             </Col>
                             <Col span={3} >
-                                <Link style={navitems} >Become a Seller</Link>
+                                <div style={navitems} >Become a Seller</div>
                             </Col>
                             <Col span={3} >
-                                <Link style={navitems}>About</Link>
+                                <div style={navitems}>About</div>
                             </Col>
                             <Col span={6} style={{ textAlign: "Right" }}>
                                 <div style={navitems} onClick={()=>setDrawer_Authentication(true)}>Login/Signup</div>
@@ -95,19 +95,19 @@ const [drawer_Authentication, setDrawer_Authentication] = useState(false)
             >
                 <div style={{ textAlign: "center", marginTop: "0rem" }}>
                     <Col style={dropdownmenu}>
-                        <Link onClick={() => setDrawer(false)} style={navitems} to="/">Home</Link>
+                        <div onClick={() => setDrawer(false)} style={navitems} >Home</div>
                     </Col>
                     <Col style={dropdownmenu}>
-                        <Link onClick={() => setDrawer(false)} style={navitems}>Explore</Link>
+                        <div onClick={() => setDrawer(false)} style={navitems}>Explore</div>
                     </Col>
                     <Col style={dropdownmenu}>
-                        <Link onClick={() => setDrawer(false)} style={navitems}>Categories</Link>
+                        <div onClick={() => setDrawer(false)} style={navitems}>Categories</div>
                     </Col>
                     <Col style={dropdownmenu}>
-                        <Link onClick={() => setDrawer(false)} style={navitems}>Become a Seller</Link>
+                        <div onClick={() => setDrawer(false)} style={navitems}>Become a Seller</div>
                     </Col>
                     <Col style={dropdownmenu}>
-                        <Link onClick={() => setDrawer(false)} style={navitems} >About</Link></Col>
+                        <div onClick={() => setDrawer(false)} style={navitems} >About</div></Col>
                         <Col style={dropdownmenu}>
                         <div  onClick={() => {setDrawer_Authentication(true);setDrawer(false)}} style={navitems} >Login/Signup</div>
                         </Col>
