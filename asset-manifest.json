@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/Music-Freelancer-Provider_website/static/css/main.eac11286.chunk.css",
-    "main.js": "/Music-Freelancer-Provider_website/static/js/main.eaeb5e41.chunk.js",
-    "main.js.map": "/Music-Freelancer-Provider_website/static/js/main.eaeb5e41.chunk.js.map",
-    "runtime-main.js": "/Music-Freelancer-Provider_website/static/js/runtime-main.6a4f0ecb.js",
-    "runtime-main.js.map": "/Music-Freelancer-Provider_website/static/js/runtime-main.6a4f0ecb.js.map",
+    "main.js": "/Music-Freelancer-Provider_website/static/js/main.7a3d3415.chunk.js",
+    "main.js.map": "/Music-Freelancer-Provider_website/static/js/main.7a3d3415.chunk.js.map",
+    "runtime-main.js": "/Music-Freelancer-Provider_website/static/js/runtime-main.c35aadc8.js",
+    "runtime-main.js.map": "/Music-Freelancer-Provider_website/static/js/runtime-main.c35aadc8.js.map",
     "static/css/2.c02757eb.chunk.css": "/Music-Freelancer-Provider_website/static/css/2.c02757eb.chunk.css",
-    "static/js/2.f3126df9.chunk.js": "/Music-Freelancer-Provider_website/static/js/2.f3126df9.chunk.js",
-    "static/js/2.f3126df9.chunk.js.map": "/Music-Freelancer-Provider_website/static/js/2.f3126df9.chunk.js.map",
-    "static/js/3.baa3100d.chunk.js": "/Music-Freelancer-Provider_website/static/js/3.baa3100d.chunk.js",
-    "static/js/3.baa3100d.chunk.js.map": "/Music-Freelancer-Provider_website/static/js/3.baa3100d.chunk.js.map",
+    "static/js/2.de4ea349.chunk.js": "/Music-Freelancer-Provider_website/static/js/2.de4ea349.chunk.js",
+    "static/js/2.de4ea349.chunk.js.map": "/Music-Freelancer-Provider_website/static/js/2.de4ea349.chunk.js.map",
+    "static/js/3.a4722dfd.chunk.js": "/Music-Freelancer-Provider_website/static/js/3.a4722dfd.chunk.js",
+    "static/js/3.a4722dfd.chunk.js.map": "/Music-Freelancer-Provider_website/static/js/3.a4722dfd.chunk.js.map",
     "index.html": "/Music-Freelancer-Provider_website/index.html",
     "static/css/2.c02757eb.chunk.css.map": "/Music-Freelancer-Provider_website/static/css/2.c02757eb.chunk.css.map",
     "static/css/main.eac11286.chunk.css.map": "/Music-Freelancer-Provider_website/static/css/main.eac11286.chunk.css.map",
-    "static/js/2.f3126df9.chunk.js.LICENSE.txt": "/Music-Freelancer-Provider_website/static/js/2.f3126df9.chunk.js.LICENSE.txt",
+    "static/js/2.de4ea349.chunk.js.LICENSE.txt": "/Music-Freelancer-Provider_website/static/js/2.de4ea349.chunk.js.LICENSE.txt",
     "static/media/style.css": "/Music-Freelancer-Provider_website/static/media/studio.236e2db0.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.6a4f0ecb.js",
+    "static/js/runtime-main.c35aadc8.js",
     "static/css/2.c02757eb.chunk.css",
-    "static/js/2.f3126df9.chunk.js",
+    "static/js/2.de4ea349.chunk.js",
     "static/css/main.eac11286.chunk.css",
-    "static/js/main.eaeb5e41.chunk.js"
+    "static/js/main.7a3d3415.chunk.js"
   ]
 }
