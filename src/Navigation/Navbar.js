@@ -60,16 +60,16 @@ const [drawer_Authentication, setDrawer_Authentication] = useState(false)
                                 <Link style={navitems} to="/">Home</Link>
                             </Col>
                             <Col span={3} >
-                                <Link style={navitems} to="/">Explore</Link>
+                                <Link style={navitems} >Explore</Link>
                             </Col>
                             <Col span={3} >
-                                <Link style={navitems} to="/">Categories</Link>
+                                <Link style={navitems} >Categories</Link>
                             </Col>
                             <Col span={3} >
-                                <Link style={navitems} to="/">Become a Seller</Link>
+                                <Link style={navitems} >Become a Seller</Link>
                             </Col>
                             <Col span={3} >
-                                <Link style={navitems} to="/">About</Link>
+                                <Link style={navitems}>About</Link>
                             </Col>
                             <Col span={6} style={{ textAlign: "Right" }}>
                                 <div style={navitems} onClick={()=>setDrawer_Authentication(true)}>Login/Signup</div>
@@ -98,16 +98,16 @@ const [drawer_Authentication, setDrawer_Authentication] = useState(false)
                         <Link onClick={() => setDrawer(false)} style={navitems} to="/">Home</Link>
                     </Col>
                     <Col style={dropdownmenu}>
-                        <Link onClick={() => setDrawer(false)} style={navitems} to="/">Explore</Link>
+                        <Link onClick={() => setDrawer(false)} style={navitems}>Explore</Link>
                     </Col>
                     <Col style={dropdownmenu}>
-                        <Link onClick={() => setDrawer(false)} style={navitems} to="/sample">Categories</Link>
+                        <Link onClick={() => setDrawer(false)} style={navitems}>Categories</Link>
                     </Col>
                     <Col style={dropdownmenu}>
-                        <Link onClick={() => setDrawer(false)} style={navitems} to="/sample">Become a Seller</Link>
+                        <Link onClick={() => setDrawer(false)} style={navitems}>Become a Seller</Link>
                     </Col>
                     <Col style={dropdownmenu}>
-                        <Link onClick={() => setDrawer(false)} style={navitems} to="/sample">About</Link></Col>
+                        <Link onClick={() => setDrawer(false)} style={navitems} >About</Link></Col>
                         <Col style={dropdownmenu}>
                         <div  onClick={() => {setDrawer_Authentication(true);setDrawer(false)}} style={navitems} >Login/Signup</div>
                         </Col>

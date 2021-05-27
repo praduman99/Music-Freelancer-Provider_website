@@ -18,8 +18,7 @@ const NavbarRouterdom = () => {
         <Router>
             <Navbar/>
             <Switch >
-                <Route strict  path="/"  component={Homepage}></Route>
-                <Route path="/Authentication" component={Authentication_page}></Route>
+                <Route strict exact path="/"  component={Homepage}></Route>
             </Switch>
             <Footer />
         </Router>
