@@ -323,8 +323,7 @@ const Authentication_page = () => {
       </Form.Item> */}
                             <Form.Item>
                                 <button htmlType="submit" className="formbutton">Signup</button>
-
-Or <span className="text" onClick={() => { setFormtype(!formtype) }}>Login here!</span>
+ <span className="text" onClick={() => { setFormtype(!formtype) }}>Login here!</span>
                             </Form.Item>
                         </Form>
                     </div>

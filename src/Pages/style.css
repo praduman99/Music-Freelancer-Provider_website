@@ -8,6 +8,7 @@
     background-size: cover;
     padding-top: 15rem;
     color: white;
+    margin-bottom: 5rem;
 
 }
 
@@ -36,9 +37,8 @@
 
 }
 .Content_Heading{
-font-size: 3rem;
-margin: 1rem;
-text-shadow: 5px 5px 5px black;
+font-size: 2rem;
+margin: 3rem 1rem 1rem 1rem ;
 font-weight: 550;
 }
 
@@ -48,6 +48,11 @@ div::-webkit-scrollbar {
     }
     / optional: show position indicator in red */
     scroll-behavior: smooth;
+}
+
+.content_slab{
+
+ height: 400px;
 }
 
 

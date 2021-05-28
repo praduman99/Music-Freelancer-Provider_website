@@ -1,110 +1,216 @@
-import { Row, Layout, Col, Divider, Button, Image, Card, Avatar } from 'antd'
-import React from 'react'
+import { Row, Layout, Col, Divider, Button, Image, Card, Avatar, List, Typography, Divide, Carousel } from 'antd'
+import React,{useState,useEffect} from 'react'
 import '../Pages/style.css'
-import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
+import { EditOutlined, EllipsisOutlined, SettingOutlined, CheckOutlined, RightCircleFilled, LeftCircleFilled } from '@ant-design/icons';
 const { Meta } = Card;
-const choose = [
+
+const Freelancer_Data = [
     {
         id: 1,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcu_WS7ciRH9fOqCbPyk1vI4I8WiTknpTGPA&usqp=CAU",
-        Desciption: "I am using antd for my app. I need to change the color of a default Primary Button from Blue to Grey. It seems like antd doesn't provide such an option. How can I change the button color easily?",
+        Name: "Parul",
+        image: ["https://images.unsplash.com/photo-1589903308904-1010c2294adc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+
+            "https://images.unsplash.com/photo-1610889186954-69404e4affee?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+
+            "https://images.unsplash.com/photo-1568185518838-3300c90c9170?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+
+            "https://images.unsplash.com/photo-1588479839125-3a70c078d257?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        ],
+        genre: "electronic"
     },
     {
         id: 2,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcu_WS7ciRH9fOqCbPyk1vI4I8WiTknpTGPA&usqp=CAU",
-        Desciption: "I am using antd for my app. I need to change the color of a default Primary Button from Blue to Grey. It seems like antd doesn't provide such an option. How can I change the button color easily?",
+        Name: "Parul",
+        image: ["https://images.unsplash.com/photo-1593359863503-f598684c806f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDR8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "https://images.unsplash.com/photo-1605493717195-6612d1fb4a0b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjV8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "https://images.unsplash.com/photo-1619379179326-c50023f868a8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzB8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"]
     },
     {
         id: 3,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcu_WS7ciRH9fOqCbPyk1vI4I8WiTknpTGPA&usqp=CAU",
-        Desciption: "I am using antd for my app. I need to change the color of a default Primary Button from Blue to Grey. It seems like antd doesn't provide such an option. How can I change the button color easily?",
+        Name: "Parul",
+        image: ["https://images.unsplash.com/photo-1589903308904-1010c2294adc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+
+            "https://images.unsplash.com/photo-1610889186954-69404e4affee?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+
+            "https://images.unsplash.com/photo-1568185518838-3300c90c9170?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+
+            "https://images.unsplash.com/photo-1588479839125-3a70c078d257?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        ],
+        genre: "electronic"
     },
     {
         id: 4,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcu_WS7ciRH9fOqCbPyk1vI4I8WiTknpTGPA&usqp=CAU",
-        Desciption: "I am using antd for my app. I need to change the color of a default Primary Button from Blue to Grey. It seems like antd doesn't provide such an option. How can I change the button color easily?",
+        Name: "Parul",
+        image: ["https://images.unsplash.com/photo-1593359863503-f598684c806f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDR8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "https://images.unsplash.com/photo-1605493717195-6612d1fb4a0b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjV8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "https://images.unsplash.com/photo-1619379179326-c50023f868a8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzB8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"]
+    },
+    {
+        id: 5,
+        Name: "Parul",
+        image: ["https://images.unsplash.com/photo-1589903308904-1010c2294adc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+
+            "https://images.unsplash.com/photo-1610889186954-69404e4affee?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+
+            "https://images.unsplash.com/photo-1568185518838-3300c90c9170?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+
+            "https://images.unsplash.com/photo-1588479839125-3a70c078d257?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        ],
+        genre: "electronic"
+    },
+    {
+        id: 6,
+        Name: "Parul",
+        image: ["https://images.unsplash.com/photo-1593359863503-f598684c806f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDR8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "https://images.unsplash.com/photo-1605493717195-6612d1fb4a0b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjV8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "https://images.unsplash.com/photo-1619379179326-c50023f868a8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzB8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"]
+    },
+    {
+        id: 7,
+        Name: "Parul",
+        image: ["https://images.unsplash.com/photo-1589903308904-1010c2294adc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+
+            "https://images.unsplash.com/photo-1610889186954-69404e4affee?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+
+            "https://images.unsplash.com/photo-1568185518838-3300c90c9170?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+
+            "https://images.unsplash.com/photo-1588479839125-3a70c078d257?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        ],
+        genre: "electronic"
+    },
+    {
+        id: 8,
+        Name: "Parul",
+        image: ["https://images.unsplash.com/photo-1593359863503-f598684c806f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDR8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "https://images.unsplash.com/photo-1605493717195-6612d1fb4a0b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjV8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "https://images.unsplash.com/photo-1619379179326-c50023f868a8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzB8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"]
+    },
+    {
+        id: 9,
+        Name: "Parul",
+        image: ["https://images.unsplash.com/photo-1589903308904-1010c2294adc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+
+            "https://images.unsplash.com/photo-1610889186954-69404e4affee?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+
+            "https://images.unsplash.com/photo-1568185518838-3300c90c9170?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+
+            "https://images.unsplash.com/photo-1588479839125-3a70c078d257?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        ],
+        genre: "electronic"
+    },
+    {
+        id: 10,
+        Name: "Parul",
+        image: ["https://images.unsplash.com/photo-1593359863503-f598684c806f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDR8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "https://images.unsplash.com/photo-1605493717195-6612d1fb4a0b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjV8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "https://images.unsplash.com/photo-1619379179326-c50023f868a8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzB8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"]
+    },
+    {
+        id: 11,
+        Name: "Parul",
+        image: ["https://images.unsplash.com/photo-1589903308904-1010c2294adc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+
+            "https://images.unsplash.com/photo-1610889186954-69404e4affee?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+
+            "https://images.unsplash.com/photo-1568185518838-3300c90c9170?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+
+            "https://images.unsplash.com/photo-1588479839125-3a70c078d257?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        ],
+        genre: "electronic"
+    },
+    {
+        id: 12,
+        Name: "Parul",
+        image: ["https://images.unsplash.com/photo-1593359863503-f598684c806f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDR8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "https://images.unsplash.com/photo-1605493717195-6612d1fb4a0b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjV8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "https://images.unsplash.com/photo-1619379179326-c50023f868a8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzB8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"]
+    },
+    {
+        id: 13,
+        Name: "Parul",
+        image: ["https://images.unsplash.com/photo-1589903308904-1010c2294adc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+
+            "https://images.unsplash.com/photo-1610889186954-69404e4affee?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+
+            "https://images.unsplash.com/photo-1568185518838-3300c90c9170?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+
+            "https://images.unsplash.com/photo-1588479839125-3a70c078d257?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        ],
+        genre: "electronic"
+    },
+    {
+        id: 14,
+        Name: "Parul",
+        image: ["https://images.unsplash.com/photo-1593359863503-f598684c806f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDR8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "https://images.unsplash.com/photo-1605493717195-6612d1fb4a0b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjV8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "https://images.unsplash.com/photo-1619379179326-c50023f868a8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzB8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"]
+    },
+    {
+        id: 15,
+        Name: "Parul",
+        image: ["https://images.unsplash.com/photo-1589903308904-1010c2294adc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+
+            "https://images.unsplash.com/photo-1610889186954-69404e4affee?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+
+            "https://images.unsplash.com/photo-1568185518838-3300c90c9170?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+
+            "https://images.unsplash.com/photo-1588479839125-3a70c078d257?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        ],
+        genre: "electronic"
     },
 
 ]
-const choose1 = [
-    {
-        id: 1,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcu_WS7ciRH9fOqCbPyk1vI4I8WiTknpTGPA&usqp=CAU",
-        Desciption: "I am using antd for my app. I need to change the color of a default Primary Button from Blue to Grey. It seems like antd doesn't provide such an option. How can I change the button color easily?",
-    },
-    {
-        id: 2,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcu_WS7ciRH9fOqCbPyk1vI4I8WiTknpTGPA&usqp=CAU",
-        Desciption: "I am using antd for my app. I need to change the color of a default Primary Button from Blue to Grey. It seems like antd doesn't provide such an option. How can I change the button color easily?",
-    },
-    {
-        id: 3,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcu_WS7ciRH9fOqCbPyk1vI4I8WiTknpTGPA&usqp=CAU",
-        Desciption: "I am using antd for my app. I need to change the color of a default Primary Button from Blue to Grey. It seems like antd doesn't provide such an option. How can I change the button color easily?",
-    },
-    {
-        id: 4,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcu_WS7ciRH9fOqCbPyk1vI4I8WiTknpTGPA&usqp=CAU",
-        Desciption: "I am using antd for my app. I need to change the color of a default Primary Button from Blue to Grey. It seems like antd doesn't provide such an option. How can I change the button color easily?",
-    },
 
-    {
-        id: 4,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcu_WS7ciRH9fOqCbPyk1vI4I8WiTknpTGPA&usqp=CAU",
-        Desciption: "I am using antd for my app. I need to change the color of a default Primary Button from Blue to Grey. It seems like antd doesn't provide such an option. How can I change the button color easily?",
-    },
+const data = [
+    'Racing car sprays burning fuel into crowd.',
+    'Japanese princess to wed commoner.',
+    'Australian walks 100km after outback crash.',
+    'Man charged over missing wedding girl.',
+    'Los Angeles battles huge wildfires.',
+];
 
-    {
-        id: 4,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcu_WS7ciRH9fOqCbPyk1vI4I8WiTknpTGPA&usqp=CAU",
-        Desciption: "I am using antd for my app. I need to change the color of a default Primary Button from Blue to Grey. It seems like antd doesn't provide such an option. How can I change the button color easily?",
-    },
 
-    {
-        id: 4,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcu_WS7ciRH9fOqCbPyk1vI4I8WiTknpTGPA&usqp=CAU",
-        Desciption: "I am using antd for my app. I need to change the color of a default Primary Button from Blue to Grey. It seems like antd doesn't provide such an option. How can I change the button color easily?",
-    },
-
-    {
-        id: 4,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcu_WS7ciRH9fOqCbPyk1vI4I8WiTknpTGPA&usqp=CAU",
-        Desciption: "I am using antd for my app. I need to change the color of a default Primary Button from Blue to Grey. It seems like antd doesn't provide such an option. How can I change the button color easily?",
-    },
-
-    {
-        id: 4,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcu_WS7ciRH9fOqCbPyk1vI4I8WiTknpTGPA&usqp=CAU",
-        Desciption: "I am using antd for my app. I need to change the color of a default Primary Button from Blue to Grey. It seems like antd doesn't provide such an option. How can I change the button color easily?",
-    },
-
-    {
-        id: 4,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcu_WS7ciRH9fOqCbPyk1vI4I8WiTknpTGPA&usqp=CAU",
-        Desciption: "I am using antd for my app. I need to change the color of a default Primary Button from Blue to Grey. It seems like antd doesn't provide such an option. How can I change the button color easily?",
-    },
-
-    {
-        id: 4,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcu_WS7ciRH9fOqCbPyk1vI4I8WiTknpTGPA&usqp=CAU",
-        Desciption: "I am using antd for my app. I need to change the color of a default Primary Button from Blue to Grey. It seems like antd doesn't provide such an option. How can I change the button color easily?",
-    },
-
-    {
-        id: 4,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcu_WS7ciRH9fOqCbPyk1vI4I8WiTknpTGPA&usqp=CAU",
-        Desciption: "I am using antd for my app. I need to change the color of a default Primary Button from Blue to Grey. It seems like antd doesn't provide such an option. How can I change the button color easily?",
-    },
-
-    {
-        id: 4,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcu_WS7ciRH9fOqCbPyk1vI4I8WiTknpTGPA&usqp=CAU",
-        Desciption: "I am using antd for my app. I need to change the color of a default Primary Button from Blue to Grey. It seems like antd doesn't provide such an option. How can I change the button color easily?",
-    },
-
-]
+const ArrowStyle = {
+    height: '250px',
+    color: '#8a8a8a',
+    fontSize: "40px",
+};
 
 const Homepage = () => {
+
+    const onChange = (a, b, c) => {
+        console.log(a, b, c);
+    }
+
+
+
+    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+    // get window dimensions
+    function getWindowDimensions() {
+        const { innerWidth: width, innerHeight: height } = window;
+        return {
+            width,
+            height
+        };
+    }
+
+    useEffect(() => {
+        function handleResize() {
+            setWindowDimensions(getWindowDimensions());
+        }
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+
+
     return (
         <div>
             <Layout>
@@ -125,97 +231,155 @@ const Homepage = () => {
                 {/* */}
 
                 <Row justify="center">
-                    <h1 className="Content_Heading" style={{ textAlign: "center" }}>WHY Chose from Here</h1>
-                </Row>
-                <Row justify="center">
-                    {choose.map((item, index) => {
-                        return (
-                            <Card
-                                hoverable
-                                style={{ width: 200, margin: "1rem", border: "none" }}
-                                cover={<img alt="example" src={item.image} />}
-                            >
-                                <Meta description={item.Desciption} />
-                            </Card>
-                        )
-                    })}
+                    <Col span={12} style={{ textAlign: "center" }} >
+                        <Image src="https://images.unsplash.com/photo-1559732277-7453b141e3a1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzF8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" height="auto" preview={false}></Image>
+                    </Col>
+                    <div style={{ background: "white" }} >
+                        <Col>
+                            <List
+                                size="small"
+                                header={<h1 style={{ fontFamily: "serif", fontSize: "2rem", textAlign: "center" }}>You always Need a pro in Game !</h1>}
+                                dataSource={data}
+                                // style={{textAlign:'center'}}
+                                renderItem={item => (
+                                    <List.Item>
+                                        <CheckOutlined /> {item}
+                                    </List.Item>
+                                )}
+                            />
+                        </Col>
+                    </div>
+
+
+
                 </Row>
 
                 {/* List */}
                 <Row>
                     <h1 className="Content_Heading">Top Rating Producers</h1>
                 </Row>
-                <Row justify="center" >
+                <Row justify="center" style={{zIndex:"997"}}>
+                    <Col span={24}>
+                        <Row justify="center">
+                            <div style={{ display: "flex", overflowX: "scroll" }} >
+                                {Freelancer_Data.map((item, index) => {
+                                    return (
+                                        <Card
+                                            hoverable
+                                            key={index}
+                                            style={{ width:windowDimensions.width<=720?windowDimensions.width-10+"px":"300px", margin: "5px", zIndex: "999" }}
+                                            cover={
 
-                    <div style={{ display: "flex", overflowX: "scroll" }} >
-                        {choose1.map((item, index) => {
-                            return (
-                                <Card
-                                    hoverable
-                                    key={index}
-                                    style={{ width: 300, margin: "5px" }}
-                                    cover={
-                                        <img
-                                            alt="example"
-                                            src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                                            style={{ width: 300 }}
-                                        />
-                                    }
-                                    actions={[
-                                        <SettingOutlined key="setting" />,
-                                        <EditOutlined key="edit" />,
-                                        <EllipsisOutlined key="ellipsis" />,
-                                    ]}
-                                >
-                                    <Meta
-                                        avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                                        title="Card title"
-                                        description="This is the description"
-                                    />
-                                </Card>
-                            )
-                        })}
-                    </div>
+                                                <div>
+                                                    <Carousel dots={false} arrows="small" effect="slide" autoplay="true" style={{ zIndex: "9" }} afterChange={onChange}>
+                                                        {item.image.map((data) => {
+                                                            return (<div>
 
+                                                                <img
+                                                                    alt="example"
+                                                                    src={data}
+                                                                    height="250px"
+                                                                    width="100%"
+
+                                                                />
+                                                            </div>)
+                                                        })}
+                                                    </Carousel>
+                                                </div>
+                                            }
+                                            actions={[
+                                                <SettingOutlined key="setting" />,
+                                                <EditOutlined key="edit" />,
+                                                <EllipsisOutlined key="ellipsis" />,
+                                            ]}
+                                        >
+                                            <Meta
+                                                avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                                                title="Card title"
+                                                description="This is the description"
+                                            />
+                                        </Card>
+                                    )
+                                })}
+                            </div>
+
+                        </Row>
+                        <Row > 
+                          <Col span={12} style={{textAlign:'center'}}>
+                              <LeftCircleFilled style={ArrowStyle}  />
+                              </Col>
+                              <Col span={12} style={{textAlign:'center'}}>
+                              <RightCircleFilled  style={ArrowStyle}/>
+                              </Col>  
+                        </Row>
+                    </Col>    
                 </Row>
+{/* 
+                <Row className="content_slab">
+
+                </Row> */}
                 {/* List */}
                 <Row>
                     <h1 className="Content_Heading">Top Rating Producers</h1>
                 </Row>
-                <Row justify="center" >
+                <Row justify="center" style={{zIndex:"997"}}>
+                    <Col span={24}>
+                        <Row justify="center">
+                            <div style={{ display: "flex", overflowX: "scroll" }} >
+                                {Freelancer_Data.map((item, index) => {
+                                    return (
+                                        <Card
+                                            hoverable
+                                            key={index}
+                                            style={{ width:windowDimensions.width<=720?windowDimensions.width-10+"px":"300px", margin: "5px", zIndex: "999" }}
+                                            cover={
 
-                    <div style={{ display: "flex", overflowX: "scroll" }}>
-                        {choose1.map((item, index) => {
-                            return (
-                                <Card
-                                    hoverable
-                                    key={index}
-                                    style={{ width: 300 }}
-                                    cover={
-                                        <img
-                                            alt="example"
-                                            src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                                            style={{ width: 300, margin: "5px" }}
-                                        />
-                                    }
-                                    actions={[
-                                        <SettingOutlined key="setting" />,
-                                        <EditOutlined key="edit" />,
-                                        <EllipsisOutlined key="ellipsis" />,
-                                    ]}
-                                >
-                                    <Meta
-                                        avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                                        title="Card title"
-                                        description="This is the description"
-                                    />
-                                </Card>
-                            )
-                        })}
-                    </div>
+                                                <div>
+                                                    <Carousel dots={false} arrows="small" effect="slide" autoplay="true" style={{ zIndex: "9" }} afterChange={onChange}>
+                                                        {item.image.map((data) => {
+                                                            return (<div>
 
+                                                                <img
+                                                                    alt="example"
+                                                                    src={data}
+                                                                    height="250px"
+                                                                    width="100%"
+
+                                                                />
+                                                            </div>)
+                                                        })}
+                                                    </Carousel>
+                                                </div>
+                                            }
+                                            actions={[
+                                                <SettingOutlined key="setting" />,
+                                                <EditOutlined key="edit" />,
+                                                <EllipsisOutlined key="ellipsis" />,
+                                            ]}
+                                        >
+                                            <Meta
+                                                avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                                                title="Card title"
+                                                description="This is the description"
+                                            />
+                                        </Card>
+                                    )
+                                })}
+                            </div>
+
+                        </Row>
+                        <Row > 
+                          <Col span={12}  style={{textAlign:'center'}}>
+                              <LeftCircleFilled  style={ArrowStyle}/>
+                              </Col>
+                              <Col span={12} style={{textAlign:'center'}}>
+                              <RightCircleFilled  style={ArrowStyle}/>
+                              </Col>  
+                        </Row>
+                    </Col>    
                 </Row>
-                
+
+
 
             </Layout>
         </div>
