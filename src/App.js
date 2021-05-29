@@ -4,14 +4,17 @@ import 'antd/dist/antd.css';
 import Footer from './Pages/Footer'
 import Homepage from './Pages/Homepage';
 import Navbar from './Navigation/Navbar'
+import Loader from './utility/Loader';
 
 const App = () => {
   return (
     <div>
 
       <Navbar />
+      
       <Homepage />
-      <Footer />
+  
+      <Footer/>
     </div>
   );
 }
