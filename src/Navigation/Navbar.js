@@ -9,6 +9,7 @@ import Authentication_page from '../Authentication/Authentication_page';
 const navitems = {
     color: "darkgrey",
     fontFamily: "sans-serif",
+    lineHeight:"2.5rem"
 }
 
 const dropdownmenu = {
@@ -51,7 +52,7 @@ const [drawer_Authentication, setDrawer_Authentication] = useState(false)
         <div>
             <Row style={{ padding: "10px 5px 5px 5px", position: "fixed", width: "100%", background: "white", zIndex: "999" }}>
                 <Col span={4}>
-                    <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdOFkJdONNVcgQtzjt6LkFzmz2xw8j1N8NeQ&usqp=CAU" width="150px" height="30px" />
+                    <Image src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Logo%21_Logo.svg/1200px-Logo%21_Logo.svg.png" width="100px" height="40px" />
                 </Col>
                 {windowDimensions.width >= 720 ?
                     <Col span={20}>

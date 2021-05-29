@@ -1,7 +1,7 @@
 import { Row, Layout, Col, Divider, Button, Image, Card, Avatar, List, Typography, Divide, Carousel } from 'antd'
 import React, { useState, useEffect } from 'react'
 import '../Pages/style.css'
-import { EditOutlined, EllipsisOutlined, SettingOutlined, CheckOutlined, RightCircleOutlined, LeftCircleOutlined } from '@ant-design/icons';
+import { EditOutlined, EllipsisOutlined, SettingOutlined, CheckOutlined, RightSquareFilled, LeftSquareFilled, AudioOutlined, LaptopOutlined, FormOutlined, ControlOutlined, DatabaseOutlined, CustomerServiceOutlined } from '@ant-design/icons';
 import Loader from '../utility/Loader';
 const { Meta } = Card;
 
@@ -179,10 +179,8 @@ const data = [
 
 
 const ArrowStyle = {
-    height: '250px',
-    color: 'white',
-    fontSize: "60px",
-    padding: "5px 5px 5px 5px "
+
+
 };
 
 const Homepage = () => {
@@ -211,16 +209,16 @@ const Homepage = () => {
     }, []);
     useEffect(() => {
         setIsLoading(true)
-       setTimeout(() => {
-           setIsLoading(false)
-       }, 2000);
-       setIsLoading(false)
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 2000);
+        setIsLoading(false)
     }, [isLoading])
 
     return (
         <div>
-        {
-            isLoading? <Loader enable={isLoading} /> :
+            {
+                isLoading ? <Loader enable={isLoading} /> :
                     <Layout>
                         <div className="Header_Container">
                             <Row justify="center">
@@ -269,21 +267,21 @@ const Homepage = () => {
                         <Row justify="center" >
                             <Row style={{ zIndex: "997", position: 'absolute', lineHeight: "250px", width: "100%" }}>
                                 <Col span={12} style={{ textAlign: 'left', zIndex: "996" }}>
-                                    <LeftCircleOutlined style={ArrowStyle} />
+                                    <LeftSquareFilled style={{ ...ArrowStyle, color: windowDimensions.width > 720 ? "black" : 'Darkorange', fontSize: windowDimensions.width > 720 ? "50px" : '40px' }} />
                                 </Col>
                                 <Col span={12} style={{ textAlign: 'right' }}>
-                                    <RightCircleOutlined style={ArrowStyle} />
+                                    <RightSquareFilled style={{ ...ArrowStyle, color: windowDimensions.width > 720 ? "black" : 'Darkorange', fontSize: windowDimensions.width > 720 ? "50px" : '40px' }} />
                                 </Col>
                             </Row>
-                            <Col span={24}>
+                            <Col span={windowDimensions.width > 720 ? 22 : 18}>
                                 <Row justify="center">
-                                    <div style={{ display: "flex", overflowX: "scroll" }} >
+                                    <div style={{ display: "flex", overflowX: "scroll", marginLeft: "-5px" }} >
                                         {Freelancer_Data.map((item, index) => {
                                             return (
                                                 <Card
                                                     hoverable
                                                     key={index}
-                                                    style={{ width: windowDimensions.width <= 720 ? windowDimensions.width - 10 + "px" : "300px", margin: "5px", zIndex: "995" }}
+                                                    style={{ width: windowDimensions.width <= 720 ? windowDimensions.width + "px" : "310px", margin: "5px", zIndex: "995" }}
                                                     cover={
 
                                                         <div>
@@ -323,15 +321,102 @@ const Homepage = () => {
 
                             </Col>
                         </Row>
-                        {/* 
-                <Row className="content_slab">
+                        <Row>
+                            <h1 className="Content_Heading">Top Rating Producers</h1>
+                        </Row>
+                        <Row justify="center" >
+                            <Row style={{ zIndex: "997", position: 'absolute', lineHeight: "250px", width: "100%" }}>
+                                <Col span={12} style={{ textAlign: 'left', zIndex: "996" }}>
+                                    <LeftSquareFilled style={{ ...ArrowStyle, color: windowDimensions.width > 720 ? "black" : 'Darkorange', fontSize: windowDimensions.width > 720 ? "50px" : '40px' }} />
+                                </Col>
+                                <Col span={12} style={{ textAlign: 'right' }}>
+                                    <RightSquareFilled style={{ ...ArrowStyle, color: windowDimensions.width > 720 ? "black" : 'Darkorange', fontSize: windowDimensions.width > 720 ? "50px" : '40px' }} />
+                                </Col>
+                            </Row>
+                            <Col span={windowDimensions.width > 720 ? 22 : 18}>
+                                <Row justify="center">
+                                    <div style={{ display: "flex", overflowX: "scroll", marginLeft: "-5px" }} >
+                                        {Freelancer_Data.map((item, index) => {
+                                            return (
+                                                <Card
+                                                    hoverable
+                                                    key={index}
+                                                    style={{ width: windowDimensions.width <= 720 ? windowDimensions.width + "px" : "310px", margin: "5px", zIndex: "995" }}
+                                                    cover={
 
-                </Row> */}
+                                                        <div>
+                                                            <Carousel dots={false} arrows="small" effect="slide" autoplay="true" style={{ zIndex: "9" }} afterChange={onChange}>
+                                                                {item.image.map((data) => {
+                                                                    return (<div>
+
+                                                                        <img
+                                                                            alt="example"
+                                                                            src={data}
+                                                                            height="250px"
+                                                                            width="100%"
+
+                                                                        />
+                                                                    </div>)
+                                                                })}
+                                                            </Carousel>
+                                                        </div>
+                                                    }
+                                                    actions={[
+                                                        <SettingOutlined key="setting" />,
+                                                        <EditOutlined key="edit" />,
+                                                        <EllipsisOutlined key="ellipsis" />,
+                                                    ]}
+                                                >
+                                                    <Meta
+                                                        avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                                                        title="Card title"
+                                                        description="This is the description"
+                                                    />
+                                                </Card>
+                                            )
+                                        })}
+                                    </div>
+
+                                </Row>
+
+                            </Col>
+                        </Row>
+
+                        <Row>
+                            <h1 className="Content_Heading">Explore Our Market</h1>
+                        </Row>
+                        <Row className="content_slab">
+                            <Row style={{ width: "100%", padding: "60px 10px 5px 30px" }} gutter={24}>
+                                <Col span={8} className="Hover"><ControlOutlined className="Iconname" size={5} /><p className="Iconname">Mix&Matser</p></Col>
+                                <Col span={8} className="Hover"><LaptopOutlined className="Iconname" size={5} /><p className="Iconname">Producer</p></Col>
+                                <Col span={8} className="Hover"><CustomerServiceOutlined className="Iconname" size={5} /><p className="Iconname">Composer</p></Col>
+                            </Row>
+                            <Row style={{ width: "100%", padding: "60px 10px 5px 30px" }} gutter={20}>
+
+                                <Col span={8} className="Hover"><FormOutlined className="Iconname" size={5} /><p className="Iconname">Lyricist</p></Col>
+                                <Col span={8} className="Hover"><DatabaseOutlined className="Iconname" size={5} /><p className="Iconname">Instrument Player</p></Col>
+                                <Col span={8} className="Hover"> <AudioOutlined className="Iconname" size={5} /><p className="Iconname">Singer</p></Col>
+
+                            </Row>
+                        </Row>
+
+                        <Row>
+
+                            <h1 className="Content_Heading">Customer Reviews </h1>
+                        </Row>
+                        <Row justify="center">
+                            <Col span={12}>
+                                <iframe  style={{height:windowDimensions.width>720?"400px":'auto'}} width="100%" 
+                                    src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
+                                </iframe>
+
+                            </Col>
+                        </Row>
 
                     </Layout>
-        }
-          </div>
-)
+            }
+        </div>
+    )
 }
 
 export default Homepage
