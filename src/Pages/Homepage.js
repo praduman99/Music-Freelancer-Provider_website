@@ -285,7 +285,7 @@ const Homepage = () => {
                                                     cover={
 
                                                         <div>
-                                                            <Carousel dots={false} arrows="small" effect="slide" autoplay="true" style={{ zIndex: "9" }} afterChange={onChange}>
+                                                            <Carousel dots={false} arrows="small" effect="slide"  autoplay="true" style={{ zIndex: "9" }} afterChange={onChange}>
                                                                 {item.image.map((data) => {
                                                                     return (<div>
 
