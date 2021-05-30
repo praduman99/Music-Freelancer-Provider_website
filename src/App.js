@@ -5,6 +5,7 @@ import Footer from './Pages/Footer'
 import Homepage from './Pages/Homepage';
 import Navbar from './Navigation/Navbar'
 import Loader from './utility/Loader';
+import Aboutus from './Pages/Aboutus';
 
 const App = () => {
   return (
@@ -12,7 +13,7 @@ const App = () => {
 
       <Navbar />
       
-      <Homepage />
+      <Aboutus/>
   
       <Footer/>
     </div>

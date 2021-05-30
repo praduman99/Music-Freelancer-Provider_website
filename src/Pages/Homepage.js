@@ -212,8 +212,8 @@ const Homepage = () => {
         setTimeout(() => {
             setIsLoading(false)
         }, 2000);
-        setIsLoading(false)
-    }, [isLoading])
+
+    }, [])
 
     return (
         <div>
@@ -285,7 +285,7 @@ const Homepage = () => {
                                                     cover={
 
                                                         <div>
-                                                            <Carousel dots={false} arrows="small" effect="slide"  autoplay="true" style={{ zIndex: "9" }} afterChange={onChange}>
+                                                            <Carousel dots={false} arrows="small" effect="slide" autoplay="true" style={{ zIndex: "9" }} afterChange={onChange}>
                                                                 {item.image.map((data) => {
                                                                     return (<div>
 
@@ -406,7 +406,7 @@ const Homepage = () => {
                         </Row>
                         <Row justify="center">
                             <Col span={12}>
-                                <iframe  style={{height:windowDimensions.width>720?"400px":'auto'}} width="100%" 
+                                <iframe style={{ height: windowDimensions.width > 720 ? "400px" : 'auto' }} width="100%"
                                     src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
                                 </iframe>
 
