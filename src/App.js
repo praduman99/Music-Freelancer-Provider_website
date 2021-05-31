@@ -6,6 +6,7 @@ import Homepage from './Pages/Homepage';
 import Navbar from './Navigation/Navbar'
 import Loader from './utility/Loader';
 import Aboutus from './Pages/Aboutus';
+import ServiceRequest from './Pages/ServiceRequest';
 
 const App = () => {
   return (
@@ -13,7 +14,9 @@ const App = () => {
 
       <Navbar />
       
+      <Homepage/>
       <Aboutus/>
+      <ServiceRequest/>
   
       <Footer/>
     </div>

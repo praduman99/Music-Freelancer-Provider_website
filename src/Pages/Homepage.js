@@ -207,13 +207,13 @@ const Homepage = () => {
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
-    useEffect(() => {
-        setIsLoading(true)
-        setTimeout(() => {
-            setIsLoading(false)
-        }, 2000);
+    // useEffect(() => {
+    //     setIsLoading(true)
+    //     setTimeout(() => {
+    //         setIsLoading(false)
+    //     }, 2000);
 
-    }, [])
+    // }, [])
 
     return (
         <div>

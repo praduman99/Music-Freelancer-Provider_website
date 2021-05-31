@@ -18,13 +18,9 @@ const NavbarRouterdom = () => {
        <>
             <Navbar />
             <Homepage/>
-            {/* <Switch >
-
-                <Route strict exact path="/">
-                    <Redirect to="/home" />
-                </Route>
+            <Switch >
                 <Route exact path="/home" component={Homepage}></Route>
-            </Switch> */}
+            </Switch>
             <Footer />
        </>
     );
