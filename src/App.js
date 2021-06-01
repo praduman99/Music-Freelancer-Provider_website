@@ -13,11 +13,7 @@ const App = () => {
     <div>
 
       <Navbar />
-      
-      <Homepage/>
-      <Aboutus/>
       <ServiceRequest/>
-  
       <Footer/>
     </div>
   );
