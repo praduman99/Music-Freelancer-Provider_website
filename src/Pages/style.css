@@ -29,18 +29,18 @@
    
 }
 .Heading_Button {
-    background-color: #d14600;
+    background-color: #03fc73;
     border: none;
     padding: .5rem 3rem .5rem 3rem ;
     border-radius:2rem;
     text-align: center;
     font-weight: 600; 
     color: white;
+  
 
 }
 .Heading_Button:hover{
     text-shadow: white 0px 0px 20px;
-   
 }
 .Content_Heading{
 font-size: 2rem;
@@ -67,12 +67,10 @@ text-align: center;
 .Iconname{
    font-size: 1rem;
    font-family:monospace;
-   
-
 }
 .Hover{}
 .Hover:hover{
-    color: #d14600;
+    color: #03fc73;
     cursor: context-menu;
 }
  
@@ -115,4 +113,26 @@ text-align: center;
 
 .aboutHover:hover{
    font-size: 1rem;
+}
+
+
+/* Freelancer profile  */
+
+.Heading_FreelancerProfile{
+font-size: 3rem;
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.Profile_Image{
+    border-radius:50%;
+
+}
+.Heading_Data_Profile{
+    text-align: center;
+}
+.Heading_Text_Profile{
+    font-size:15px;
+    color: darkgray;
+    padding: 1rem;
 }

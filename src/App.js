@@ -7,13 +7,14 @@ import Navbar from './Navigation/Navbar'
 import Loader from './utility/Loader';
 import Aboutus from './Pages/Aboutus';
 import ServiceRequest from './Pages/ServiceRequest';
+import FreelancerProfile from './Pages/FreelancerProfile';
 
 const App = () => {
   return (
     <div>
-
       <Navbar />
       <Homepage/>
+      <FreelancerProfile/>
       <ServiceRequest/>
       <Aboutus/>
       <Footer/>
