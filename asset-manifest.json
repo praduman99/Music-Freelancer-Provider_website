@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Music-Freelancer-Provider_website/static/css/main.3b577678.chunk.css",
-    "main.js": "/Music-Freelancer-Provider_website/static/js/main.d5dd2579.chunk.js",
-    "main.js.map": "/Music-Freelancer-Provider_website/static/js/main.d5dd2579.chunk.js.map",
+    "main.js": "/Music-Freelancer-Provider_website/static/js/main.904b1d8d.chunk.js",
+    "main.js.map": "/Music-Freelancer-Provider_website/static/js/main.904b1d8d.chunk.js.map",
     "runtime-main.js": "/Music-Freelancer-Provider_website/static/js/runtime-main.84e7d28a.js",
     "runtime-main.js.map": "/Music-Freelancer-Provider_website/static/js/runtime-main.84e7d28a.js.map",
     "static/css/2.c02757eb.chunk.css": "/Music-Freelancer-Provider_website/static/css/2.c02757eb.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.c02757eb.chunk.css",
     "static/js/2.f496e3bd.chunk.js",
     "static/css/main.3b577678.chunk.css",
-    "static/js/main.d5dd2579.chunk.js"
+    "static/js/main.904b1d8d.chunk.js"
   ]
 }
