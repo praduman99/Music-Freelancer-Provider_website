@@ -36,10 +36,10 @@ const ServiceRequest = () => {
     }, []);
 
     const [form] = Form.useForm();
-  
+
 
     const onFinish = (values) => {
-       console.log(values)
+        console.log(values)
     };
     return (
         <div>
@@ -57,8 +57,8 @@ const ServiceRequest = () => {
                         <Form
                             form={form}
 
-                    onFinish={onFinish}
-                            
+                            onFinish={onFinish}
+
                         >
 
                             <Form.Item label="Subject" >
@@ -86,15 +86,17 @@ const ServiceRequest = () => {
                     </Row>
                     <Row>
                         <Col span={12}>
-                            <button style={{ fontSize: "12px",width:"90%" }} className="Heading_Button" >Open requests</button>
+                            <button style={{ fontSize: "12px", width: "90%" }} className="Heading_Button" >Open requests</button>
                         </Col>
                         <Col span={12}>
                             <button
-                                style={{ fontSize: "12px",width:"90%" }} className="Heading_Button" >Closed requests</button>
+                                style={{ fontSize: "12px", width: "90%" }} className="Heading_Button" >Closed requests</button>
                         </Col>
                     </Row>
-                    <Row justify="start">
-
+                    <Row justify="center">
+                        <div style={{textAlign:"center",padding:"1rem"}}>
+                            No data
+</div>
                     </Row>
                 </Col>
             </Row>

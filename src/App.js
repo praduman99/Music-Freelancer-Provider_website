@@ -14,8 +14,8 @@ const App = () => {
 
       <Navbar />
       <Homepage/>
-    
       <ServiceRequest/>
+      <Aboutus/>
       <Footer/>
     </div>
   );
