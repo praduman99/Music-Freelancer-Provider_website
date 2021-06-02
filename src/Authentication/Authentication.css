@@ -1,5 +1,5 @@
 .formbutton{
-    background-color: darkorange;
+    background-color: #d14600;
     border: none;
     padding: .5rem 2rem .5rem 2rem ;
     border-radius:2rem;
@@ -9,8 +9,11 @@
 
 }
 .text{
-    color: darkorange;
+    color: #d14600;
 }
 .text:hover{
     cursor:default;
+}
+.formbutton:hover{
+    text-shadow: white 0px 0px 20px;
 }

@@ -13,6 +13,8 @@ const App = () => {
     <div>
 
       <Navbar />
+      <Homepage/>
+    
       <ServiceRequest/>
       <Footer/>
     </div>
