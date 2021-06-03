@@ -29,7 +29,7 @@
    
 }
 .Heading_Button {
-    background-color: #03fc73;
+    background-color: darkorange;
     border: none;
     padding: .5rem 3rem .5rem 3rem ;
     border-radius:2rem;
@@ -70,7 +70,7 @@ text-align: center;
 }
 .Hover{}
 .Hover:hover{
-    color: #03fc73;
+    color: darkorange;
     cursor: context-menu;
 }
  
@@ -135,4 +135,13 @@ font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size:15px;
     color: darkgray;
     padding: 1rem;
+}
+.Price_Profile{
+  font-size: 1rem;
+  color: darkgrey;
+}
+
+.Price_card_heading{
+text-align:center;
+color: darkorange;
 }

@@ -1,7 +1,20 @@
-import { Row, Col, Image } from 'antd'
+import { List, Row, Col, Image, Carousel } from 'antd'
 import React, { useEffect, useState } from 'react'
 import './style.css'
-import { MessageOutlined, PhoneOutlined } from '@ant-design/icons'
+import { MessageOutlined, PhoneOutlined ,  CheckOutlined } from '@ant-design/icons'
+import CardsRow from '../ReusableComponents/CardsRow';
+import Layout from 'antd/lib/layout/layout';
+const data = [
+    'Mixed Mater',
+];
+const data1 = [
+    'Mixed Mater',
+    'Mixed Mater',
+    'Mixed Mater',
+    'Mixed Mater',
+    'Mixed Mater',
+    'Mixed Mater',
+];
 const FreelancerProfile = () => {
     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
     // get window dimensions
@@ -22,7 +35,21 @@ const FreelancerProfile = () => {
     }, []);
 
 
+    function onChange(a, b, c) {
+        console.log(a, b, c);
+    }
+
+    const contentStyle = {
+        height: '300px',
+        color: '#fff',
+        lineHeight: '160px',
+        textAlign: 'center',
+        background: '#364d79',
+    };
+
+
     return (
+        <Layout>
         <div style={{ marginTop: "3rem" }}>
             <Row justify="center">
                 <div>
@@ -36,11 +63,20 @@ const FreelancerProfile = () => {
                         <div className="Heading_Text_Profile"> Projects in queue(4)</div>
                     </Row>
                     <Row justify="center">
-                        <h4>Services</h4>
+                        <h3 style={{ fontFamily: "monospace" }}>Services</h3>
                     </Row>
-                    <Row>
-                        <Col span={24}></Col>
+                    <Row justify="center" >
+                        <Col span={12}>
+                            <List
+                                size="small"
+
+                                dataSource={data}
+                                renderItem={item => <List.Item>{item}</List.Item>}
+                            />
+                        </Col>
+                        <Col span={8}><Row justify="center" > <h1>₹148 <span className="Price_Profile">/Song</span></h1> </Row></Col>
                     </Row>
+
                     <Row justify="center">
                         <Col span={windowDimensions.width > 720 ? 8 : 12} >
                             <button className="Heading_Button">
@@ -50,16 +86,54 @@ const FreelancerProfile = () => {
                                 </div>
                             </button>
                         </Col>
-                        <Col span={windowDimensions.width > 720 ? 8 : 12}>
+                        {/* <Col span={windowDimensions.width > 720 ? 8 : 12}>
                             <button className="Heading_Button">
                                <span><PhoneOutlined /></span>
                                Call
                             </button>
-                        </Col>
+                        </Col> */}
                     </Row>
                 </Col>
             </Row>
+            <Row  style={{padding:"1rem"}}>
+                <Col span={windowDimensions.width>720?16:24} >
+                    <Carousel afterChange={onChange} >
+                        <div>
+                            <h3 style={contentStyle}>1</h3>
+                        </div>
+                        <div>
+                            <h3 style={contentStyle}>2</h3>
+                        </div>
+                        <div>
+                            <h3 style={contentStyle}>3</h3>
+                        </div>
+                        <div>
+                            <h3 style={contentStyle}>4</h3>
+                        </div>
+                    </Carousel>
+                </Col>
+               
+                <List
+                    header={<div><h1 className="Price_card_heading"> Check Out Plan Here!</h1></div>}
+                    footer={<div style={{textAlign:'center'}}><button className="Heading_Button" style={{width:"100%"}}>Continue(₹143)</button></div>}
+                    bordered 
+                    dataSource={data1}
+                    style={{width:windowDimensions.width>720?"30%":"100%"}}
+                    renderItem={item => (
+                        <List.Item>
+                        
+                         <CheckOutlined style={{color:"darkorange",fontSize:"1rem"}} />  {item}
+                        </List.Item>
+                    )}
+                />
+            </Row>
+              <Row>
+                  <h1 className="Content_Heading">Some More Freelancers</h1>
+              </Row>
+                <CardsRow/>
+              
         </div>
+        </Layout>
     )
 }
 

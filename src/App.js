@@ -8,6 +8,7 @@ import Loader from './utility/Loader';
 import Aboutus from './Pages/Aboutus';
 import ServiceRequest from './Pages/ServiceRequest';
 import FreelancerProfile from './Pages/FreelancerProfile';
+import CardsRow from './ReusableComponents/CardsRow';
 
 const App = () => {
   return (
