@@ -24,7 +24,6 @@ const App = () => {
       <Homepage/>
       <FreelancerProfile/>
       <ServiceRequest/>
-      <Aboutus/>
       <Footer/>
     </div>
   );
