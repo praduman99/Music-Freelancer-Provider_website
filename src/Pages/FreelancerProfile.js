@@ -11,9 +11,6 @@ const data1 = [
     'Mixed Mater',
     'Mixed Mater',
     'Mixed Mater',
-    'Mixed Mater',
-    'Mixed Mater',
-    'Mixed Mater',
 ];
 const FreelancerProfile = () => {
     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
