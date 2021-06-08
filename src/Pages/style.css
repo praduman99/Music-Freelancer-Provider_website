@@ -145,3 +145,14 @@ font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 text-align:center;
 color: darkorange;
 }
+.Profile_services{
+  
+    padding: 5px;
+    border-radius:10px;
+    margin: 5px;
+    background-color:rgba(4, 109, 221, 0.659);
+}
+
+.Layout{
+    background-color: white;
+}

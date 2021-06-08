@@ -51,7 +51,7 @@ const Homepage = () => {
         <div>
             {
                 isLoading ? <Loader enable={isLoading} /> :
-                    <Layout>
+                    <Layout className="Layout">
                         <div className="Header_Container">
                             <Row justify="center">
                                 <div>
