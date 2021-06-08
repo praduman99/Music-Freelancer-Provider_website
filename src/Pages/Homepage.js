@@ -98,6 +98,10 @@ const Homepage = () => {
                         </Row>
                         <CardsRow/>
                         <Row>
+                            <h1 className="Content_Heading">Top Rating Mixing Engineer</h1>
+                        </Row>
+                        <CardsRow/>
+                        <Row>
                             <h1 className="Content_Heading">Explore Our Market</h1>
                         </Row>
                         <Row className="content_slab">

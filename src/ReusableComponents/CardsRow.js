@@ -208,7 +208,7 @@ const CardsRow = (props) => {
             <Row justify="center" >
                 <Row style={{ zIndex: "997", position: 'absolute', lineHeight: "250px", width: "100%" }}>
                     <Col span={12} style={{ textAlign: 'left', zIndex: "996" }}>
-                        <LeftSquareFilled style={{ ...ArrowStyle, color: windowDimensions.width > 720 ? "black" : 'Darkorange', fontSize: windowDimensions.width > 720 ? "50px" : '40px' }} />
+                        <LeftSquareFilled style={{ ...ArrowStyle, color: windowDimensions.width > 720 ? "black" : 'Darkorange', fontSize: windowDimensions.width > 720 ? "50px" : '40px' }}  />
                     </Col>
                     <Col span={12} style={{ textAlign: 'right' }}>
                         <RightSquareFilled style={{ ...ArrowStyle, color: windowDimensions.width > 720 ? "black" : 'Darkorange', fontSize: windowDimensions.width > 720 ? "50px" : '40px' }} />
@@ -226,7 +226,7 @@ const CardsRow = (props) => {
                                         cover={
 
                                             <div>
-                                                <Carousel dots={false} arrows="small" effect="slide" autoplay="true" style={{ zIndex: "9" }} afterChange={onChange}>
+                                                <Carousel dots={false} arrows="small" effect="slide" autoplay="true" style={{ zIndex: "9" }} afterChange={onChange} >
                                                     {item.image.map((data) => {
                                                         return (<div>
 

@@ -1,14 +1,14 @@
 import { List, Row, Col, Image, Carousel } from 'antd'
 import React, { useEffect, useState } from 'react'
 import './style.css'
-import { MessageOutlined, PhoneOutlined, CheckOutlined } from '@ant-design/icons'
+import { MessageOutlined, PhoneOutlined, CheckOutlined, EnvironmentOutlined } from '@ant-design/icons'
 import CardsRow from '../ReusableComponents/CardsRow';
 import Layout from 'antd/lib/layout/layout';
 const data = [
     'Mixed Mater',
     'Production',
     'Fuck u buddy',
- 
+
 ];
 const data1 = [
     'Mixed Mater',
@@ -75,11 +75,11 @@ const FreelancerProfile = () => {
                                     })}
                                 </Row>
                             </Col>
-                            <Col span={8} ><Row justify="center"> <h1  style={{fontSize:"4rem",padding:"20px 0px 0px 20px"}}>₹148 <span className="Price_Profile">/Song</span></h1> </Row></Col>
+                            <Col  span={windowDimensions.width > 720 ? 12 : 24}><div className="Price_Profile">*₹3413/song</div>  </Col>
                         </Row>
 
                         <Row justify="center">
-                            <Col span={windowDimensions.width > 720 ? 8 : 12} >
+                            <Col span={windowDimensions.width > 720 ? 12 : 24} >
                                 <button className="Heading_Button">
                                     <div>
                                         <MessageOutlined />
@@ -130,10 +130,81 @@ const FreelancerProfile = () => {
                 </Row>
 
                 <Row>
+                    <h1 className="Content_Heading">Profile</h1>
+                </Row>
+                <Row>
+                    <Col span={windowDimensions.width > 720 ? 12 : 22} style={{ padding: "1rem" }}>
+                        <Row justify="space-between">
+                            <div className="Heading_FreelancerProfile">
+                                Ankel sin
+                            </div>
+                            <div style={{ fontSize: "1.5rem", paddingTop: "1.5rem" }}>
+                                <EnvironmentOutlined />
+                               India
+                            </div>
+                        </Row>
+                        <Row>
+                            <div>
+                                A paragraph is a series of related sentences developing a central idea, called the topic. Try to think about paragraphs in terms of thematic unity: a paragraph is a sentence or a group of sentences that supports one central, unified idea. Paragraphs add one idea at a time to your broader argument.
+                            </div>
+                        </Row>
+                        <Row>
+                            <div className="Bio_Headings_Profiles">Experience :</div>
+                            <div className="Bio_Text_Profiles">5yrs</div>
+                        </Row>
+                        <Row>
+                            <div className="Bio_Headings_Profiles">Experties :</div>
+                            <div className="Bio_Text_Profiles">Mixing</div>
+                        </Row>
+                        <Row>
+                            <div className="Bio_Headings_Profiles">Acheivements :</div>
+                            <div className="Bio_Text_Profiles">5yrs</div>
+                        </Row>
+                        <Row>
+                            <div className="Bio_Headings_Profiles">Highest Rating Work :</div>
+                            <div className="Bio_Text_Profiles">
+                                <a href="https://www.youtube.com/watch?v=KeSeFHfSqys">https://www.youtube.com/watch?v=KeSeFHfSqys</a></div>
+                        </Row>
+                        <Row>
+                            <div className="Bio_Headings_Profiles">Acheivements :</div>
+                            <div className="Bio_Text_Profiles">5yrs</div>
+                        </Row>
+                        <Row>
+                            <div className="Bio_Headings_Profiles">Acheivements :</div>
+                            <div className="Bio_Text_Profiles">5yrs</div>
+                        </Row>
+
+                        <Row>
+                            <div className="Bio_Headings_Profiles">Acheivements :</div>
+                            <div className="Bio_Text_Profiles">5yrs</div>
+                        </Row>
+                        <Row>
+                            <div className="Bio_Headings_Profiles">Acheivements :</div>
+                            <div className="Bio_Text_Profiles">5yrs</div>
+                        </Row>
+                        <Row>
+                            <div className="Bio_Headings_Profiles">Acheivements :</div>
+                            <div className="Bio_Text_Profiles">5yrs</div>
+                        </Row>
+                        <Row>
+                            <div className="Bio_Headings_Profiles">Acheivements :</div>
+                            <div className="Bio_Text_Profiles">5yrs</div>
+                        </Row>
+                    </Col>
+                </Row>
+
+                <Row>
                     <h1 className="Content_Heading">Some More Experts</h1>
                 </Row>
                 <CardsRow />
 
+
+                <Row>
+                    <h1 className="Content_Heading">Customer Reviews</h1>
+                </Row>
+                <Row>
+
+                </Row>
             </div>
         </Layout>
     )
