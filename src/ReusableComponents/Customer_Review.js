@@ -80,20 +80,18 @@ const Customer_Review = () => {
                         // style={{textAlign:'center'}}
                         renderItem={item => (
                             <List.Item>
-                                <Row justify="center" style={{width:"20%",padding:"5px"}}>
+                                <Row justify="center" style={{padding:"5px"}}>
                                     <Col>
                                     <Image width={'40px'} src={item.img}></Image>
 
                                     <div style={{ fontSize: '15px',fontWeight: 600 }}>{item.username} </div>
                                     <Rate style={{fontSize:"10px"}} disabled defaultValue={item.ratiing} /> <spna style={{fontSize:"10px",color:"black"}}>{item.ratiing}/5</spna>
-                                </Col>
-                                </Row>
-
-
-
-                                <Row>
+                                    <Row style={{marginTop:"1rem"}}>
                                     {item.review}
                                 </Row>
+                                </Col>
+                                </Row>
+                                
 
 
                             </List.Item>

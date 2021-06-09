@@ -1,4 +1,4 @@
-import { List, Row, Col, Image, Carousel } from 'antd'
+import { List, Row, Col, Image, Carousel, Rate } from 'antd'
 import React, { useEffect, useState } from 'react'
 import './style.css'
 import { MessageOutlined, PhoneOutlined, CheckOutlined, EnvironmentOutlined } from '@ant-design/icons'
@@ -13,8 +13,11 @@ const data = [
 ];
 const data1 = [
     'Mixed Mater',
-    'Sonlyrics',
-    'Fuck u buddy',
+    'music',
+    '5 audios',
+    '3 days',
+    '2 times renew',
+    '5 audios',
 ];
 const FreelancerProfile = () => {
     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
@@ -45,13 +48,13 @@ const FreelancerProfile = () => {
         color: '#fff',
         lineHeight: '160px',
         textAlign: 'center',
-        background: '#364d79',
+        background: 'black',
     };
 
 
     return (
         <Layout className="Layout">
-            <div style={{ marginTop: "3rem" }}>
+            <div style={{ marginTop: "5rem" }}>
                 <Row justify="center" style={{ backgroundColor: "white" }}>
                     <div>
                         <Image className="Profile_Image" src="https://media.glamour.com/photos/5695f66b16d0dc3747eece9f/1:1/w_354%2Cc_limit/sex-love-life-2015-03-hot-dudes-with-dogs-main.jpg" width={windowDimensions.width > 720 ? "350px" : windowDimensions.width + "px"} height="350px" />
@@ -60,8 +63,8 @@ const FreelancerProfile = () => {
                         <h1 className="Heading_FreelancerProfile">Ankel sin </h1>
                         <Row justify="center"><h3> will mix and master your song to industry standard</h3></Row>
                         <Row justify='center'>
-                            <div className="Heading_Text_Profile">Rating⭐⭐⭐⭐⭐(4.5) </div>
-                            <div className="Heading_Text_Profile"> Projects in queue(4)</div>
+                            <div className="Heading_Text_Profile">Rating : <Rate disabled defaultValue={4} style={{ fontSize: "15px" }} />(4.5) </div>
+                            <div className="Heading_Text_Profile" > Projects in queue(4)</div>
                         </Row>
 
                         <Row justify="center" >
@@ -76,7 +79,7 @@ const FreelancerProfile = () => {
                                     })}
                                 </Row>
                             </Col>
-                            <Col  span={windowDimensions.width > 720 ? 12 : 24}><div className="Price_Profile">*₹3413/song</div>  </Col>
+                            <Col span={windowDimensions.width > 720 ? 12 : 24}><div className="Price_Profile">*₹3413/song</div>  </Col>
                         </Row>
 
                         <Row justify="center">
@@ -101,10 +104,17 @@ const FreelancerProfile = () => {
                     <Col span={windowDimensions.width > 720 ? 16 : 24} >
                         <Carousel afterChange={onChange} pauseOnDotsHover>
                             <div>
-                                <h3 style={contentStyle}>1</h3>
+                                <h3 style={contentStyle}><audio
+                                    controls
+                                    src="/media/cc0-audio/t-rex-roar.mp3">
+                                    Your browser does not support the
+            <code>audio</code> element.
+    </audio></h3>
                             </div>
                             <div>
-                                <h3 style={contentStyle}>2</h3>
+                                <h3 style={contentStyle}> <iframe 
+                                    src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
+                                </iframe></h3>
                             </div>
                             <div>
                                 <h3 style={contentStyle}>3</h3>
@@ -167,7 +177,7 @@ const FreelancerProfile = () => {
                                 <a href="https://www.youtube.com/watch?v=KeSeFHfSqys">https://www.youtube.com/watch?v=KeSeFHfSqys</a></div>
                         </Row>
                         <Row>
-                            <div className="Bio_Headings_Profiles">Acheivements :</div>
+                            <div className="Bio_Headings_Profiles">Collaborations :</div>
                             <div className="Bio_Text_Profiles">5yrs</div>
                         </Row>
                         <Row>
@@ -205,11 +215,11 @@ const FreelancerProfile = () => {
                 </Row>
                 <Row justify="center">
                     <Col span={22}>
-                    <Customer_Review/>
+                        <Customer_Review />
                     </Col>
                 </Row>
             </div>
-        </Layout>
+        </Layout >
     )
 }
 

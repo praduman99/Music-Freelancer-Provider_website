@@ -50,7 +50,7 @@ const [drawer_Authentication, setDrawer_Authentication] = useState(false)
     return (
 
         <div>
-            <Row style={{ padding: "10px 5px 5px 5px", position: "fixed", width: "100%", background: "white", zIndex: "999" }}>
+            <Row style={{ padding: "10px 5px 5px 5px", position: "fixed", width: "100%", zIndex: "999",background:"black"}}>
                 <Col span={4}>
                     <Image src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Logo%21_Logo.svg/1200px-Logo%21_Logo.svg.png" width="100px" height="40px" />
                 </Col>
