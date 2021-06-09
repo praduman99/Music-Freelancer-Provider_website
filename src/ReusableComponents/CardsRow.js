@@ -222,7 +222,7 @@ const CardsRow = (props) => {
                                     <Card
                                         hoverable
                                         key={index}
-                                        style={{ width: windowDimensions.width <= 720 ? windowDimensions.width + "px" : "310px", margin: "5px", zIndex: "995" }}
+                                        style={{ width: windowDimensions.width <= 720 ? windowDimensions.width-95+ "px" : "310px", margin: "5px", zIndex: "995" }}
                                         cover={
 
                                             <div>

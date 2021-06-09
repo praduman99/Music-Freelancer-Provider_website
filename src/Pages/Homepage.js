@@ -14,7 +14,6 @@ const data = [
 ];
 
 
-
 const Homepage = () => {
 
     const [isLoading, setIsLoading] = useState(false)

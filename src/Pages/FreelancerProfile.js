@@ -4,6 +4,7 @@ import './style.css'
 import { MessageOutlined, PhoneOutlined, CheckOutlined, EnvironmentOutlined } from '@ant-design/icons'
 import CardsRow from '../ReusableComponents/CardsRow';
 import Layout from 'antd/lib/layout/layout';
+import Customer_Review from '../ReusableComponents/Customer_Review';
 const data = [
     'Mixed Mater',
     'Production',
@@ -53,7 +54,7 @@ const FreelancerProfile = () => {
             <div style={{ marginTop: "3rem" }}>
                 <Row justify="center" style={{ backgroundColor: "white" }}>
                     <div>
-                        <Image className="Profile_Image" src="https://images.unsplash.com/photo-1622398565884-861701ad4c0a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" width={windowDimensions.width > 720 ? "350px" : windowDimensions.width + "px"} height="350px" />
+                        <Image className="Profile_Image" src="https://media.glamour.com/photos/5695f66b16d0dc3747eece9f/1:1/w_354%2Cc_limit/sex-love-life-2015-03-hot-dudes-with-dogs-main.jpg" width={windowDimensions.width > 720 ? "350px" : windowDimensions.width + "px"} height="350px" />
                     </div>
                     <Col span={16} className="Heading_Data_Profile">
                         <h1 className="Heading_FreelancerProfile">Ankel sin </h1>
@@ -202,8 +203,10 @@ const FreelancerProfile = () => {
                 <Row>
                     <h1 className="Content_Heading">Customer Reviews</h1>
                 </Row>
-                <Row>
-
+                <Row justify="center">
+                    <Col span={22}>
+                    <Customer_Review/>
+                    </Col>
                 </Row>
             </div>
         </Layout>
