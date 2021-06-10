@@ -101,8 +101,8 @@ const FreelancerProfile = () => {
                     </Col>
                 </Row>
                 <Row style={{ padding: "1rem" }}>
-                    <Col span={windowDimensions.width > 720 ? 16 : 24} >
-                        <Carousel afterChange={onChange} pauseOnDotsHover>
+                    <Col  span={windowDimensions.width > 720 ? 16 : 24} >
+                        <Carousel afterChange={onChange} pauseOnDotsHover className="carousalhover" >
                             <div>
                                 <h3 style={contentStyle}><audio
                                     controls

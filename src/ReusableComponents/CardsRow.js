@@ -215,8 +215,8 @@ const CardsRow = (props) => {
                     </Col>
                 </Row>
                 <Col span={windowDimensions.width > 720 ? 22 : 18}>
-                    <Row justify="center">
-                        <div style={{ display: "flex", overflowX: "scroll", marginLeft: "-5px" }} >
+                    <Row justify="center" >
+                        <div  style={{ display: "flex", overflowX: "scroll", marginLeft: "-5px" }} >
                             {Freelancer_Data.map((item, index) => {
                                 return (
                                     <Card

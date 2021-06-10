@@ -48,6 +48,9 @@ margin: 3rem 1rem 1rem 1rem ;
 font-weight: 550;
 }
 
+
+
+
 div::-webkit-scrollbar {
     width: 0px; /* remove scrollbar space /
     background: transparent; / optional: just make scrollbar invisible /
@@ -55,6 +58,8 @@ div::-webkit-scrollbar {
     / optional: show position indicator in red */
     scroll-behavior: smooth;
 }
+
+
 
 .content_slab{
 background-color: black;
@@ -179,4 +184,8 @@ color: darkorange;
 
  font-size: 2rem;
  margin-top: 4rem;
+}
+.carousalhover:hover{
+
+    cursor: grabbing;
 }
