@@ -10,19 +10,20 @@ import {
 import Footer from '../Pages/Footer'
 import Homepage from '../Pages/Homepage';
 import Navbar from '../Navigation/Navbar'
-import sample from '../Pages/sample'
+
 import Authentication_page from '../Authentication/Authentication_page';
+import Aboutus from '../Pages/Aboutus';
 
 const NavbarRouterdom = () => {
     return (
-       <>
+        <Router>
             <Navbar />
-            <Homepage/>
-            <Switch >
-                <Route exact path="/home" component={Homepage}></Route>
+            <Switch>
+                <Route  exact component={Homepage} path='/' />
+                <Route exact component={Aboutus} path='/About'/>
             </Switch>
             <Footer />
-       </>
+        </Router>
     );
 }
 

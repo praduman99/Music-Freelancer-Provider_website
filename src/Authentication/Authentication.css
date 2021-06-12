@@ -1,15 +1,14 @@
 .formbutton{
-    background-color: #d14600;
+    background-color: darkorange;
     border: none;
     padding: .5rem 2rem .5rem 2rem ;
     border-radius:2rem;
     text-align: center;
     font-weight: 600; 
     color:white;
-
 }
 .text{
-    color: #d14600;
+    color: darkorange;
 }
 .text:hover{
     cursor:default;
