@@ -22,7 +22,7 @@ const NavbarRouterdom = () => {
                 <Route render={() => {
                     return (<Redirect to='/home'></Redirect>)
                 }}  component={Homepage} path='/' ></Route>
-                <Route exact component={Aboutus} path='/About' />
+                <Route  component={Aboutus} path='/About' />
             </Switch>
             <Footer />
         </Router>
