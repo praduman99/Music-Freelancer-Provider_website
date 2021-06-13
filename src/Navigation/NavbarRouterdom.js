@@ -19,8 +19,10 @@ const NavbarRouterdom = () => {
         <Router>
             <Navbar />
             <Switch>
-                <Route  exact component={Homepage} path='/' />
-                <Route exact component={Aboutus} path='/About'/>
+                <Route render={() => {
+                    return (<Redirect to='/'></Redirect>)
+                }} exact component={Homepage} path='/' ></Route>
+                <Route exact component={Aboutus} path='/About' />
             </Switch>
             <Footer />
         </Router>
