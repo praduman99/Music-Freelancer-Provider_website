@@ -225,7 +225,7 @@ const CardsRow = (props) => {
                                         style={{ width: windowDimensions.width <= 720 ? windowDimensions.width-95+ "px" : "310px", margin: "5px", zIndex: "995" }}
                                         cover={
 
-                                        +    <div>
+                                       <div>
                                                 <Carousel dots={false} arrows="small" effect="slide" autoplay="true" style={{ zIndex: "9" }} afterChange={onChange} >
                                                     {item.image.map((data) => {
                                                         return (<div>

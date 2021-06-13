@@ -13,6 +13,9 @@ import NavbarRouterdom from './Navigation/NavbarRouterdom';
 const App = () => {
   return (
     <div>
+      {/* <div style={{margin:'4rem'}}>
+      <Loader/>
+      </div> */}
       <NavbarRouterdom/>
     </div>
   );

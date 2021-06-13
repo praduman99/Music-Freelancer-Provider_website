@@ -16,7 +16,12 @@ const data = [
 
 const Homepage = () => {
 
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(false);
+
+
+
+
+  
     const onChange = (a, b, c) => {
         console.log(a, b, c);
     }
@@ -38,13 +43,13 @@ const Homepage = () => {
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
-    // useEffect(() => {
-    //     setIsLoading(true)
-    //     setTimeout(() => {
-    //         setIsLoading(false)
-    //     }, 2000);
+    useEffect(() => {
+        setIsLoading(true)
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 2000);
 
-    // }, [])
+    }, [])
 
     return (
         <div>

@@ -105,7 +105,7 @@ const [drawer_Authentication, setDrawer_Authentication] = useState(false)
             >
                 <div style={{ textAlign: "center", marginTop: "0rem" }}>
                     <Col style={dropdownmenu}>
-                        <div onClick={() => setDrawer(false)} style={navitems} >Home</div>
+                        <Link  to='/' onClick={() => setDrawer(false)} style={navitems} >Home</Link>
                     </Col>
                     <Col style={dropdownmenu}>
                         <div onClick={() => setDrawer(false)} style={navitems}>Explore</div>
