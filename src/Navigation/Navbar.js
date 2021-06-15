@@ -57,10 +57,11 @@ const [drawer_Authentication, setDrawer_Authentication] = useState(false)
     return (
 
         <div>
-            <Row style={{ margin:0, padding:"10px", position: "fixed", width: "100%", zIndex: "999",background:"black",marginBottom:"2rem"}}>
+            <Row style={{ margin:0, padding:"10px 10px 0px 10px", position: "fixed", width: "100%", zIndex: "999",background:"black",marginBottom:"2rem"}}>
                 <Col span={4}>
                     {/* <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMg4_JHBW1paaGeBu2tqOe7vThzwmszk4LVQ&usqp=CAU" width="100px" height="40px"/> */}
                    <div style={{color:'darkorange',width:"100px",height:"40px",fontFamily:"serif",fontSize:"2rem",marginTop:'-5px'}}>Dreamer</div>
+                   <div style={{color:'darkorange',width:"100px",height:"30px",fontFamily:"serif",fontSize:"13px",marginTop:'-5px'}}>Dreams come True</div>
                 </Col>
                 {windowDimensions.width >= 720 ?
                     <Col span={20}>

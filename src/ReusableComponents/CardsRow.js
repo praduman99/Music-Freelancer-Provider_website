@@ -3,7 +3,7 @@ import { Row, Layout, Col, Divider, Button, Image, Card, Avatar, List, Typograph
 import React, { useState, useEffect } from 'react'
 import '../Pages/style.css'
 import { EditOutlined, EllipsisOutlined, SettingOutlined, CheckOutlined, RightSquareFilled, LeftSquareFilled, AudioOutlined, LaptopOutlined, FormOutlined, ControlOutlined, DatabaseOutlined, CustomerServiceOutlined } from '@ant-design/icons';
-
+import {Link} from 'react-router-dom'
 const { Meta } = Card;
 
 const Freelancer_Data = [
@@ -219,6 +219,7 @@ const CardsRow = (props) => {
                         <div  style={{ display: "flex", overflowX: "scroll", marginLeft: "-5px" }} >
                             {Freelancer_Data.map((item, index) => {
                                 return (
+                                    <Link to='/Profile'>
                                     <Card
                                         hoverable
                                         key={index}
@@ -253,6 +254,7 @@ const CardsRow = (props) => {
                                             description="This is the description"
                                         />
                                     </Card>
+                                    </Link>
                                 )
                             })}
                         </div>

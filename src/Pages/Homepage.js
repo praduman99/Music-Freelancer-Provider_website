@@ -23,7 +23,7 @@ const Homepage = () => {
 
   
     const onChange = (a, b, c) => {
-        console.log(a, b, c);
+       
     }
 
     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
