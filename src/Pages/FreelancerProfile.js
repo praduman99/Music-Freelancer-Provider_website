@@ -5,6 +5,7 @@ import { MessageOutlined, PhoneOutlined, CheckOutlined, EnvironmentOutlined } fr
 import CardsRow from '../ReusableComponents/CardsRow';
 import Layout from 'antd/lib/layout/layout';
 import Customer_Review from '../ReusableComponents/Customer_Review';
+import Loader from '../utility/Loader'
 const data = [
     'Mixed Mater',
     'Production',
@@ -20,6 +21,7 @@ const data1 = [
     '5 audios',
 ];
 const FreelancerProfile = () => {
+    const [isLoading, setIsLoading] = useState(false);
     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
     // get window dimensions
     function getWindowDimensions() {
@@ -30,6 +32,13 @@ const FreelancerProfile = () => {
         };
     }
 
+      useEffect(() => {
+        setIsLoading(true)
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 1000);
+
+    }, [])
     useEffect(() => {
         function handleResize() {
             setWindowDimensions(getWindowDimensions());
@@ -54,6 +63,7 @@ const FreelancerProfile = () => {
 
     return (
         <Layout className="Layout">
+            {isLoading==true?<Loader enable={isLoading}/>:
             <div style={{ marginTop: "5rem" }}>
                 <Row justify="center" style={{ backgroundColor: "white" }}>
                     <div>
@@ -61,7 +71,7 @@ const FreelancerProfile = () => {
                     </div>
                     <Col span={16} className="Heading_Data_Profile">
                         <h1 className="Heading_FreelancerProfile">Ankel sin </h1>
-                        <Row justify="center"><h3> will mix and master your song to industry standard</h3></Row>
+                        <Row justify="center"><h3> will mix and master your song to  industry standard</h3></Row>
                         <Row justify='center'>
                             <div className="Heading_Text_Profile">Rating : <Rate disabled defaultValue={4} style={{ fontSize: "15px" }} />(4.5) </div>
                             <div className="Heading_Text_Profile" > Projects in queue(4)</div>
@@ -218,7 +228,7 @@ const FreelancerProfile = () => {
                         <Customer_Review />
                     </Col>
                 </Row>
-            </div>
+            </div>}
         </Layout >
     )
 }

@@ -3,7 +3,7 @@ import { Row, Layout, Col, Divider, Button, Image, Card, Avatar, List, Typograph
 import React, { useState, useEffect } from 'react'
 import '../Pages/style.css'
 import { EditOutlined, EllipsisOutlined, SettingOutlined, CheckOutlined, RightSquareFilled, LeftSquareFilled, AudioOutlined, LaptopOutlined, FormOutlined, ControlOutlined, DatabaseOutlined, CustomerServiceOutlined } from '@ant-design/icons';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 const { Meta } = Card;
 
 const Freelancer_Data = [
@@ -167,10 +167,78 @@ const Freelancer_Data = [
         ],
         genre: "electronic"
     },
- ]
+]
 
 
- const ArrowStyle = {
+const pics = [
+    {
+        id: 1,
+        Name: "Parul",
+        image: ["https://images.unsplash.com/photo-1589903308904-1010c2294adc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+
+        ],
+        genre: "electronic"
+    },
+    {
+        id: 1,
+        Name: "Parul",
+        image: [
+            "https://images.unsplash.com/photo-1610889186954-69404e4affee?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        ],
+        genre: "electronic"
+    },
+    {
+        id: 1,
+        Name: "Parul",
+        image: ["https://images.unsplash.com/photo-1589903308904-1010c2294adc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+
+        ],
+        genre: "electronic"
+    },
+    {
+        id: 1,
+        Name: "Parul",
+        image: [
+            "https://images.unsplash.com/photo-1610889186954-69404e4affee?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        ],
+        genre: "electronic"
+    },
+    {
+        id: 1,
+        Name: "Parul",
+        image: ["https://images.unsplash.com/photo-1589903308904-1010c2294adc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+
+        ],
+        genre: "electronic"
+    },
+    {
+        id: 1,
+        Name: "Parul",
+        image: [
+            "https://images.unsplash.com/photo-1610889186954-69404e4affee?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        ],
+        genre: "electronic"
+    },
+    {
+        id: 1,
+        Name: "Parul",
+        image: ["https://images.unsplash.com/photo-1589903308904-1010c2294adc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+
+        ],
+        genre: "electronic"
+    },
+    {
+        id: 1,
+        Name: "Parul",
+        image: [
+            "https://images.unsplash.com/photo-1610889186954-69404e4affee?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        ],
+        genre: "electronic"
+    },
+
+]
+
+const ArrowStyle = {
 };
 
 const CardsRow = (props) => {
@@ -202,13 +270,13 @@ const CardsRow = (props) => {
     //     }, 2000);
 
     // }, [])
-    
+
     return (
         <div>
             <Row justify="center" >
                 <Row style={{ zIndex: "997", position: 'absolute', lineHeight: "250px", width: "100%" }}>
                     <Col span={12} style={{ textAlign: 'left', zIndex: "996" }}>
-                        <LeftSquareFilled style={{ ...ArrowStyle, color: windowDimensions.width > 720 ? "black" : 'Darkorange', fontSize: windowDimensions.width > 720 ? "50px" : '40px' }}  />
+                        <LeftSquareFilled style={{ ...ArrowStyle, color: windowDimensions.width > 720 ? "black" : 'Darkorange', fontSize: windowDimensions.width > 720 ? "50px" : '40px' }} />
                     </Col>
                     <Col span={12} style={{ textAlign: 'right' }}>
                         <RightSquareFilled style={{ ...ArrowStyle, color: windowDimensions.width > 720 ? "black" : 'Darkorange', fontSize: windowDimensions.width > 720 ? "50px" : '40px' }} />
@@ -216,45 +284,47 @@ const CardsRow = (props) => {
                 </Row>
                 <Col span={windowDimensions.width > 720 ? 22 : 18}>
                     <Row justify="center" >
-                        <div  style={{ display: "flex", overflowX: "scroll", marginLeft: "-5px" }} >
-                            {Freelancer_Data.map((item, index) => {
+                        <div style={{ display: "flex", overflowX: "scroll", marginLeft: "-5px" }} >
+                            {pics.map((item, index) => {
                                 return (
-                                    <Link to='/Profile'>
-                                    <Card
-                                        hoverable
-                                        key={index}
-                                        style={{ width: windowDimensions.width <= 720 ? windowDimensions.width-95+ "px" : "310px", margin: "5px", zIndex: "995" }}
-                                        cover={
+                                    <div>
+                                        <Card
+                                            hoverable
+                                            key={index}
+                                            style={{ width: windowDimensions.width <= 720 ? windowDimensions.width - 95 + "px" : "310px", margin: "5px", zIndex: "995" }}
+                                            cover={
 
-                                       <div>
-                                                <Carousel dots={false} arrows="small" effect="slide" autoplay="true" style={{ zIndex: "9" }} afterChange={onChange} >
+                                                <div>
+                                                    {/* <Carousel dots={false} arrows="small" effect="slide" autoplay="true" style={{ zIndex: "9" }} afterChange={onChange} > */}
                                                     {item.image.map((data) => {
-                                                        return (<div>
-
-                                                            <img
-                                                                alt="example"
-                                                                src={data}
-                                                                height="250px"
-                                                                width="100%"
-                                                            />
-                                                        </div>)
+                                                        return (
+                                                         
+                                                                <img
+                                                                    alt="example"
+                                                                    src={data}
+                                                                    height="100%"
+                                                                    width="100%"
+                                                                />
+                                                        
+                                                        )
                                                     })}
-                                                </Carousel>
-                                            </div>
-                                        }
-                                        actions={[
-                                            <SettingOutlined key="setting" />,
-                                            <EditOutlined key="edit" />,
-                                            <EllipsisOutlined key="ellipsis" />,
-                                        ]}
-                                    >
-                                        <Meta
-                                            avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                                            title="Card title"
-                                            description="This is the description"
-                                        />
-                                    </Card>
-                                    </Link>
+                                                    {/* </Carousel> */}
+                                                </div>
+                                            }
+                                            actions={[
+                                                <SettingOutlined key="setting" />,
+                                                
+                                                <Link to='/Profile'><div>Check Profile</div></Link>
+                                            ]}
+                                        >
+                                            <Meta
+                                                avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                                                title="Card title"
+                                                description="This is the description"
+                                            />
+                                        </Card>
+                                        </div>
+                                    
                                 )
                             })}
                         </div>
