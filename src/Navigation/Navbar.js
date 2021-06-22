@@ -73,7 +73,7 @@ const [drawer_Authentication, setDrawer_Authentication] = useState(false)
                                 <Link to=''style={navitems} >Explore</Link>
                             </Col>
                             <Col span={3} >
-                                <Link to=''style={navitems} >Categories</Link>
+                                <Link to='Categories'style={navitems} >Categories</Link>
                             </Col>
                             <Col span={3} >
                                 <Link to=''style={navitems} >Become a Seller</Link>
@@ -112,7 +112,7 @@ const [drawer_Authentication, setDrawer_Authentication] = useState(false)
                         <div onClick={() => setDrawer(false)} style={navitems}>Explore</div>
                     </Col>
                     <Col style={dropdownmenu}>
-                        <div onClick={() => setDrawer(false)} style={navitems}>Categories</div>
+                        <Link to='/Categories' onClick={() => setDrawer(false)} style={navitems}>Categories</Link>
                     </Col>
                     <Col style={dropdownmenu}>
                         <div onClick={() => setDrawer(false)} style={navitems}>Become a Seller</div>

@@ -14,6 +14,7 @@ import FreelancerProfile from '../Pages/FreelancerProfile'
 import Authentication_page from '../Authentication/Authentication_page';
 import Aboutus from '../Pages/Aboutus';
 import ScrollToTop from '../ReusableComponents/ScrollToTop'
+import Categories from '../Pages/Categories';
 
 const NavbarRouterdom = () => {
     return (
@@ -25,6 +26,7 @@ const NavbarRouterdom = () => {
                 <Route exact path='/Music-Freelancer-Provider_website/' ><Homepage /></Route>
                 <Route exact path='/About'> <Aboutus /></Route>
                 <Route exact path='/Profile'><FreelancerProfile /></Route>
+                <Route exact path='/Categories'><Categories /></Route>
             </Switch>
             <Footer />
         </Router>
