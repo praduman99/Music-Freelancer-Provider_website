@@ -1,5 +1,5 @@
 
-import { Row, Layout, Col, Divider, Button, Image, Card, Avatar, List, Typography, Divide, Carousel } from 'antd'
+import { Row, Layout, Col, Divider, Button, Image, Card, Avatar, List, Typography, Divide, Carousel, Rate } from 'antd'
 import React, { useState, useEffect } from 'react'
 import '../Pages/style.css'
 import { EditOutlined, EllipsisOutlined, SettingOutlined, CheckOutlined, RightSquareFilled, LeftSquareFilled, AudioOutlined, LaptopOutlined, FormOutlined, ControlOutlined, DatabaseOutlined, CustomerServiceOutlined } from '@ant-design/icons';
@@ -274,7 +274,7 @@ const CardsRow = (props) => {
     return (
         <div>
             <Row justify="center" >
-                <Row style={{ zIndex: "997", position: 'absolute', lineHeight: "250px", width: "100%" }}>
+                <Row style={{ zIndex: "997", position: 'absolute', lineHeight: "350px", width: "100%" }}>
                     <Col span={12} style={{ textAlign: 'left', zIndex: "996" }}>
                         <LeftSquareFilled style={{ ...ArrowStyle, color: windowDimensions.width > 720 ? "black" : 'Darkorange', fontSize: windowDimensions.width > 720 ? "50px" : '40px' }} />
                     </Col>
@@ -285,7 +285,7 @@ const CardsRow = (props) => {
                 <Col span={windowDimensions.width > 720 ? 22 : 18}>
                     <Row justify="center" >
                         <div style={{ display: "flex", overflowX: "scroll", marginLeft: "-5px" }} >
-                            {pics.map((item, index) => {
+                            {Freelancer_Data.map((item, index) => {
                                 return (
                                     <div>
                                         <Card
@@ -295,36 +295,62 @@ const CardsRow = (props) => {
                                             cover={
 
                                                 <div>
-                                                    {/* <Carousel dots={false} arrows="small" effect="slide" autoplay="true" style={{ zIndex: "9" }} afterChange={onChange} > */}
-                                                    {item.image.map((data) => {
-                                                        return (
-                                                         
+                                                    <Carousel effect="slide" arrows={true} style={{ zIndex: "9" }} autoplay={true} afterChange={onChange} >
+                                                        {item.image.map((data) => {
+                                                            return (
+
                                                                 <img
                                                                     alt="example"
                                                                     src={data}
-                                                                    height="100%"
+                                                                    height="250px"
                                                                     width="100%"
                                                                 />
-                                                        
-                                                        )
-                                                    })}
-                                                    {/* </Carousel> */}
+
+                                                            )
+                                                        })}
+                                                    </Carousel>
                                                 </div>
                                             }
+
                                             actions={[
-                                                <SettingOutlined key="setting" />,
-                                                
+
                                                 <Link to='/Profile'><div>Check Profile</div></Link>
                                             ]}
+
                                         >
-                                            <Meta
-                                                avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                                                title="Card title"
-                                                description="This is the description"
-                                            />
+
+                                            <Row>
+
+                                                <Col span={14}>
+                                                    <Meta
+                                                        avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                                                        title="jhonson"
+
+
+                                                    />
+
+
+                                                </Col>
+                                                <Col span={8}>
+                                                    <div style={{ color: "darkorange", textAlign: "right", fontWeight: "500", fontSize: "25px", marginTop: "-10px" }}>$555979</div>
+                                                </Col>
+                                            </Row>
+                                            <Row justify="center" style={{ borderTop: "lightgrey solid  1px", marginTop: "5px", padding: "5px 0px 5px 0px" }}>
+
+                                                <Rate value={3} disabled style={{ fontSize: "15px" }}>
+                                                </Rate> <div style={{ color: "grey" }}> (49)</div>
+                                            </Row>
+
+                                            <Row justify="center">
+                                                <div>                                                hey iam produceriam producer
+                                                    iam producer iam producer iam producer iam producer iam producer                                            </div>
+
+                                            </Row>
+
+
                                         </Card>
-                                        </div>
-                                    
+                                    </div>
+
                                 )
                             })}
                         </div>

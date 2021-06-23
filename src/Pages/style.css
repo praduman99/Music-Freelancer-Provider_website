@@ -194,7 +194,7 @@ color: darkorange;
 /* categories page */
 .Categories_Header_background{
     height: 100vh;
-    background-image: url("https://images.unsplash.com/photo-1537511446984-935f663eb1f4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80");
+    background-image: url("https://png.pngtree.com/thumb_back/fw800/back_our/20190625/ourmid/pngtree-creative-synthesis-road-pavement-dream-success-road-image_262190.jpg");
     background-position: center;
     background-position-y: 1px;
     background-attachment: fixed;
@@ -212,4 +212,6 @@ color: darkorange;
 
     z-index: 999;margin-bottom: -2rem;
     text-align: center;
+   text-shadow: 0px 0px 5px black;
+   
 }

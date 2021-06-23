@@ -9,15 +9,19 @@ const Categories = () => {
 
                 <Row justify="center" className="Categories_Header_background">
                     <Col span={24}>
-                        <h1 className="Categories_Header_heading" style={{ color: "black" }}>Choose What You Need ?</h1>
+                        <div>
+                            <h1 className="Categories_Header_heading" style={{ color: "black" }}>Choose What You Need ?</h1>
+                        </div>
                         <Row justify="center">
-                            {/* <Col span="16" style={{textAlign:"center",fontSize:"1rem",textDecoration:"dashed",marginTop:"2rem"}}>
-                                <h4>Choose your deal category and get a pro</h4> 
-                            </Col> */}
+                                
+
                         </Row>
                     </Col>
                 </Row>
 
+                <Row>
+
+                </Row>
                 <CardsRow />
 
             </Layout>
