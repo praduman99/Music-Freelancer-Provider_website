@@ -13,13 +13,17 @@ const Categories = () => {
                             <h1 className="Categories_Header_heading" style={{ color: "black" }}>Choose What You Need ?</h1>
                         </div>
                         <Row justify="center">
-                                
+
 
                         </Row>
                     </Col>
                 </Row>
 
                 <Row>
+<h1>take step close to your dreams</h1>
+
+
+
 
                 </Row>
                 <CardsRow />

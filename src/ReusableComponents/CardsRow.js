@@ -18,7 +18,7 @@ const Freelancer_Data = [
 
             "https://images.unsplash.com/photo-1588479839125-3a70c078d257?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fG11c2ljJTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
         ],
-        genre: "electronic"
+        genre: "electronicelectronicelectronicelectronicelectctronicelectronicelectronicelectronic    "
     },
     {
         id: 2,
@@ -336,16 +336,24 @@ const CardsRow = (props) => {
                                                 </Col>
                                             </Row>
                                             <Row justify="center" style={{ borderTop: "lightgrey solid  1px", marginTop: "5px", padding: "5px 0px 5px 0px" }}>
+                                                <Col span={24}>
+                                                    <Row justify={'center'}>
+                                                        <Rate value={3} disabled style={{ fontSize: "15px" }}>
 
-                                                <Rate value={3} disabled style={{ fontSize: "15px" }}>
-                                                </Rate> <div style={{ color: "grey" }}> (49)</div>
+                                                        </Rate> <div style={{ color: "grey" }}> (49)</div>
+                                                    </Row>
+                                                </Col>
+                                                <Col>
+                                                    <Row justify={"center"} style={{ fontWeight: "bold", color: "black" }}>
+                                                        Music Producer
+                                                    </Row>
+                                                </Col>
                                             </Row>
 
-                                            <Row justify="center">
-                                                <div>                                                hey iam produceriam producer
-                                                    iam producer iam producer iam producer iam producer iam producer                                            </div>
+                                            <div justify="center" style={{ height: "50px", wordWrap: "break-word", display: "flex", overflowWrap: "anywhere" }}>
+                                                {item.genre}
 
-                                            </Row>
+                                            </div>
 
 
                                         </Card>

@@ -122,6 +122,9 @@ const Homepage = () => {
 
                             </Row>
                         </Row>
+                        <Row justify={'center'} className="hompage_jmbotron">
+                        Take step close to your dreams
+                            </Row>
 
                         <Row>
 
