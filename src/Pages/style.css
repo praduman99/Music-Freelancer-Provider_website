@@ -14,7 +14,7 @@
 }
 
 .hompage_jmbotron{
-    height: 60vh auto;
+    padding: 7rem;
     width: 100%;
     background-image: url("https://images.unsplash.com/photo-1478737270239-2f02b77fc618?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80");
     background-position: center;
@@ -22,14 +22,16 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 15rem;
     color: white;
     margin-bottom: 5rem;
     margin-top: 2rem;
     font-size: 4rem;
-text-shadow: 0px 0px 5px  white ;
+   text-shadow: 0px 0px 5px  white ;
+   background-blend-mode: hard-light;
+   background-color: black;
+ 
 
-}
+} 
 
 .Header_heading{
     font-size: 5rem;
@@ -51,15 +53,16 @@ text-shadow: 0px 0px 5px  white ;
     background-color: darkorange;
     border: none;
     padding: .5rem 3rem .5rem 3rem ;
-    border-radius:2rem;
+    border-radius:1rem;
     text-align: center;
     font-weight: 600; 
     color: white;
-  
+    box-shadow: darkorange  0px 0px 10px ;
 
 }
 .Heading_Button:hover{
     text-shadow: white 0px 0px 20px;
+    box-shadow: darkorange  0px 0px 30px ;
 }
 .Content_Heading{
 font-size: 2rem;

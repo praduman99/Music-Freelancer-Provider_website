@@ -21,9 +21,9 @@ const Homepage = () => {
 
 
 
-  
+
     const onChange = (a, b, c) => {
-       
+
     }
 
     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
@@ -80,7 +80,7 @@ const Homepage = () => {
                                 <Col>
                                     <List
                                         size="small"
-                                        header={<h1 style={{ fontFamily: "serif", fontSize: "2rem", textAlign: "center",color:"darkorange" }}>You always Need a pro in Game !</h1>}
+                                        header={<h1 style={{ fontFamily: "serif", fontSize: "2rem", textAlign: "center", color: "darkorange" }}>You always Need a pro in Game !</h1>}
                                         dataSource={data}
                                         // style={{textAlign:'center'}}
                                         renderItem={item => (
@@ -95,16 +95,20 @@ const Homepage = () => {
 
 
                         </Row>
+                        <Row justify={'center'} className="hompage_jmbotron">
+                                                Take a step close to your dreams
+                        
+                        </Row>
 
                         {/* List */}
                         <Row>
                             <h1 className="Content_Heading">Top Rating Producers</h1>
                         </Row>
-                        <CardsRow/>
+                        <CardsRow />
                         <Row>
                             <h1 className="Content_Heading">Top Rating Mixing Engineer</h1>
                         </Row>
-                        <CardsRow/>
+                        <CardsRow />
                         <Row>
                             <h1 className="Content_Heading">Explore Our Market</h1>
                         </Row>
@@ -122,9 +126,11 @@ const Homepage = () => {
 
                             </Row>
                         </Row>
+
                         <Row justify={'center'} className="hompage_jmbotron">
-                        Take step close to your dreams
-                            </Row>
+                                            
+                        
+                        </Row>
 
                         <Row>
 

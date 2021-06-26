@@ -15,6 +15,7 @@ import Authentication_page from '../Authentication/Authentication_page';
 import Aboutus from '../Pages/Aboutus';
 import ScrollToTop from '../ReusableComponents/ScrollToTop'
 import Categories from '../Pages/Categories';
+import ServiceRequest from '../Pages/ServiceRequest';
 
 const NavbarRouterdom = () => {
     return (
@@ -27,6 +28,9 @@ const NavbarRouterdom = () => {
                 <Route exact path='/About'> <Aboutus /></Route>
                 <Route exact path='/Profile'><FreelancerProfile /></Route>
                 <Route exact path='/Categories'><Categories /></Route>
+
+                <Route exact path='/serviceRequest'><ServiceRequest /></Route>
+                
             </Switch>
             <Footer />
         </Router>

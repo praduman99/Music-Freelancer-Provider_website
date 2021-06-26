@@ -302,7 +302,7 @@ const CardsRow = (props) => {
                                                                 <img
                                                                     alt="example"
                                                                     src={data}
-                                                                    height="250px"
+                                                                    height="200px"
                                                                     width="100%"
                                                                 />
 
@@ -330,9 +330,9 @@ const CardsRow = (props) => {
                                                     />
 
 
-                                                </Col>
+                                                </Col> 
                                                 <Col span={8}>
-                                                    <div style={{ color: "darkorange", textAlign: "right", fontWeight: "500", fontSize: "25px", marginTop: "-10px" }}>$555979</div>
+                                                    <div style={{ color: "darkorange", textAlign: "right", fontWeight: "500", fontSize: "25px", marginTop: "-10px" }}>₹  5579</div>
                                                 </Col>
                                             </Row>
                                             <Row justify="center" style={{ borderTop: "lightgrey solid  1px", marginTop: "5px", padding: "5px 0px 5px 0px" }}>
