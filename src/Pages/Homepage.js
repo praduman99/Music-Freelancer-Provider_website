@@ -62,7 +62,7 @@ const Homepage = () => {
                                     <h1 className="Header_heading">We Care about Your Dreams</h1>
                                     <Divider type="horizontal" style={{ color: "darkorange", fontWeight: "900", fontSize: "2rem" }}>___________</Divider>
                                     <div style={{ display: "flex", justifyContent: "center" }}>
-                                        <p className="Heading_Text" >As is described in the Law of Continuity of Gestalt psychology, in the perceptual process, people usually tend to understand the object in the way that it is firstly perceived, to let the straight lines be straight and let the curve</p>
+                                        <p className="Heading_Text" >As is described in the Law of Continuity of Gestalt psychology, in the ived, to let the straight lines be straight and let the curve</p>
                                     </div>
                                     <div style={{ textAlign: "center", paddingBottom: "10rem" }}>
                                         <button className="Heading_Button">Signup</button>

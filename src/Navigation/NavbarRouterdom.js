@@ -24,7 +24,7 @@ const NavbarRouterdom = () => {
             <Navbar />
             <Switch>
                 <Route exact path='/' ><Homepage /></Route>
-                <Route exact path='/Music-Freelancer-Provider_website/' ><Homepage /></Route>
+                {/* <Route exact path='/Music-Freelancer-Provider_website/' ><Homepage /></Route> */}
                 <Route exact path='/About'> <Aboutus /></Route>
                 <Route exact path='/Profile'><FreelancerProfile /></Route>
                 <Route exact path='/Categories'><Categories /></Route>
