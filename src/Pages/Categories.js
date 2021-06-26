@@ -4,10 +4,13 @@ import { EditOutlined, EllipsisOutlined, SettingOutlined, CheckOutlined, RightSq
 import { Layout, Row, Col, Slider } from 'antd'
 import CardsRow from '../ReusableComponents/CardsRow'
 import { disable } from 'debug';
-import { setState } from 'expect';
+import { darkorange } from 'color-name';
+
+
+const budget = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]
 
 const Categories = () => {
-    const [budgetslidervalue, setBudgetslidervalue] = useState(0);
+    const [budgetslidervalue, setBudgetslidervalue] = useState(1000)
     return (
         <div>
             <Layout>
@@ -19,6 +22,28 @@ const Categories = () => {
                         </div>
 
                     </Col>
+                </Row>
+                <Row>
+                    <h1 className="Content_Heading" > Select Project Budget</h1>
+                </Row>
+                <Row justify="center">
+                    <Col span={16}>
+                        <Slider tooltipVisible={false} min={100} max={20000} value={budgetslidervalue} defaultValue={1000} onChange={(e) => {
+                            setBudgetslidervalue(e)
+                        }} />
+                        <Row justify={'center'}>
+                            {budget.map((item, index) => {
+                                return (<div key={index}>
+                                    <div style={{ padding: ".5rem", background: "darkorange", margin: "5px" }} onClick={() => setBudgetslidervalue(item)}> ₹ {item}</div>
+                                </div>)
+                            })}
+                        </Row>
+
+                    </Col>
+                </Row>
+
+                <Row justify={'center'}>
+                    <h1 style={{ fontSize: "4rem" }}>₹ 0-{budgetslidervalue}</h1>
                 </Row>
                 <Row>
                     <h1 className="Content_Heading" >Type of Service Required</h1>
@@ -38,23 +63,16 @@ const Categories = () => {
 
                     </Row>
                 </Row>
+
                 <Row>
-                    <h1 className="Content_Heading" > Project Budget</h1>
+                    <h1 className="Content_Heading" > Genre</h1>
                 </Row>
-
-                <Slider onChange={(e) => {
-                    setBudgetslidervalue(e)
-                }} />
-                <Row justify="center">
-                    <h1 >₹ 0 ----- ₹ {budgetslidervalue}</h1>
-                </Row>
-
 
                 <CardsRow />
 
             </Layout>
 
-        </div>
+        </div >
     )
 }
 
