@@ -1,4 +1,4 @@
-import { Col, Drawer, Image, Row } from 'antd';
+import { Col, Drawer, Image, Row} from 'antd';
 import React, { useState, useEffect } from 'react'
 import { MenuOutlined, HomeFilled } from '@ant-design/icons';
 import { div } from 'react-router-dom';
@@ -8,6 +8,7 @@ import {
     Link
     
 } from 'react-router-dom';
+import Explore from '../Pages/Explore';
 
 // navbar styling
 const navitems = {
@@ -27,6 +28,8 @@ const dropdownmenu = {
 const Navbar = () => {
     const [drawer, setDrawer] = useState(false);
 const [drawer_Authentication, setDrawer_Authentication] = useState(false)
+
+const [drawer_Explore, setDrawer_Explore] = useState(false)
 
     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
     // get window dimensions
@@ -54,6 +57,9 @@ const [drawer_Authentication, setDrawer_Authentication] = useState(false)
     const onClose_Authentication=()=>{
         setDrawer_Authentication(false)
     }
+    const onClose_Explore=()=>{
+        setDrawer_Explore(false)
+    }
     return (
 
         <div>
@@ -70,7 +76,7 @@ const [drawer_Authentication, setDrawer_Authentication] = useState(false)
                                 <Link to='/'style={navitems} >Home</Link>
                             </Col>
                             <Col span={3} >
-                                <Link to=''style={navitems} >Explore</Link>
+                            <div style={navitems} onClick={()=>setDrawer_Explore(true)}>Explore</div>
                             </Col>
                             <Col span={3} >
                                 <Link to='Categories'style={navitems} >Categories</Link>
@@ -109,7 +115,7 @@ const [drawer_Authentication, setDrawer_Authentication] = useState(false)
                         <Link  to='/' onClick={() => setDrawer(false)} style={navitems} >Home</Link>
                     </Col>
                     <Col style={dropdownmenu}>
-                        <div onClick={() => setDrawer(false)} style={navitems}>Explore</div>
+                    <div  onClick={() => {setDrawer_Explore(true);setDrawer(false)}} style={navitems} >Explore</div>
                     </Col>
                     <Col style={dropdownmenu}>
                         <Link to='/Categories' onClick={() => setDrawer(false)} style={navitems}>Categories</Link>
@@ -132,6 +138,17 @@ const [drawer_Authentication, setDrawer_Authentication] = useState(false)
                 height={"auto"}
             >
                 <Authentication_page/>
+
+                </Drawer>
+                <Drawer
+                placement={'bottom'}
+                onClose={onClose_Explore}
+                visible={drawer_Explore}
+                width={"auto"}
+                
+                height={windowDimensions.width >= 720 ? "80%" : "100%"}
+            >
+                  <Explore/>    
 
                 </Drawer>
 

@@ -138,7 +138,7 @@ const Homepage = () => {
                         </Row>
                         <Row justify="center">
                             <Col span={12}>
-                                <iframe style={{ height: windowDimensions.width > 720 ? "400px" : 'auto' }} width="100%"
+                                <iframe style={{height: windowDimensions.width > 720 ? "400px" : 'auto' }} width="100%"
                                     src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
                                 </iframe>
 
